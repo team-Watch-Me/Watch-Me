@@ -1,0 +1,6 @@
+{
+  "css_selector": {
+    "content_name": "#contents > div.movie-info-container > div.content-info > div.movie-header-area > div.movie-title-wrap > h2",
+    "streaming_provider": "#streamingVodList > div > div.price-item-provider > div.provider-info > div > span"
+  }
+}
