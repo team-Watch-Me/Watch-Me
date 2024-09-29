@@ -1,6 +1,13 @@
 {
   "css_selector": {
     "content_name": "#contents > div.movie-info-container > div.content-info > div.movie-header-area > div.movie-title-wrap > h2",
-    "streaming_provider": "#streamingVodList > div > div.price-item-provider > div.provider-info > div > span"
+    "streaming_provider": "#streamingVodList > div > div.price-item-provider > div.provider-info > div > span",
+    "plot": "#contents > div.info.tab-item > section:nth-child(1) > div > div > div > span",
+    "genre": "#contents > div.info.tab-item > section:nth-child(1) > ul > li:nth-child(1) > span.item__body",
+    "age_rating": "#contents > div.info.tab-item > section:nth-child(1) > ul > li:nth-child(4) > span.item__body",
+    "country": "#contents > div.info.tab-item > section:nth-child(1) > ul > li:nth-child(6) > span.item__body",
+    "release_date": "#contents > div.info.tab-item > section:nth-child(1) > ul > li:nth-child(3) > span.item__body",
+    "running_time": "#contents > div.info.tab-item > section:nth-child(1) > ul > li:nth-child(5) > span.item__body",
+    "year": "#contents > div.info.tab-item > section:nth-child(1) > ul > li:nth-child(7) > span.item__body"
   }
 }

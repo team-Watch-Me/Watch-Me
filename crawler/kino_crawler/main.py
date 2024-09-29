@@ -4,8 +4,7 @@ import json
 
 def main():
     crawler = KinoCrawler(10)
-    crawler.add_field("content_name")
-    crawler.add_field("streaming_provider")
+    crawler.add_all_fields()
 
     data = crawler.crawl()
 

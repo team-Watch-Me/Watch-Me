@@ -1,7 +1,9 @@
 import json
+import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+
 
 class KinoCrawler:
 
@@ -11,6 +13,9 @@ class KinoCrawler:
         self.kino = json.load(self.kino_json)
         self.page_size = page_size
         self.crawl_dict = []
+        self.fields = []
+        for field in self.kino["css_selector"]:
+            self.fields.append(field)
 
     def __del__(self):
         self.driver.quit()
@@ -24,6 +29,8 @@ class KinoCrawler:
 
             if not self.verify_url():
                 continue
+
+            self.expand_data()
 
             content_name = self.driver.find_elements(By.CSS_SELECTOR, self.kino["css_selector"]["content_name"])[0].text
             contents = {}
@@ -47,3 +54,16 @@ class KinoCrawler:
 
     def add_field(self, field):
         self.crawl_dict.append(field)
+
+    def add_all_fields(self):
+        for field in self.fields:
+            self.add_field(field)
+
+    def expand_data(self):
+        try:
+            while True:
+                btn = self.driver.find_element(By.CSS_SELECTOR, '#contents > div.info.tab-item > section:nth-child(1) > div > div > div > button')
+                btn.click()
+                time.sleep(0.2)
+        except:
+            return
