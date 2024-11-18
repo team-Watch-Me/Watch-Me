@@ -44,7 +44,6 @@ class KinoCrawler:
             
             data[content_name] = contents
             required_fields = self.fields
-            #required_fields = ["content_name", "streaming_provider", "plot", "genre", "age_rating", "country", "release_date", "running_time", "year" ]
             filtered_data = {
                 key: value
                 for key, value in data.items()
