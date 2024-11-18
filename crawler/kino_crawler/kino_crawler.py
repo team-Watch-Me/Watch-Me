@@ -40,10 +40,16 @@ class KinoCrawler:
                 contents[field] = []
                 for element in elements:
                     contents[field].append(element.text)
-
+            
+            
             data[content_name] = contents
-
-        return data
+            required_fields = self.fields
+            filtered_data = {
+                key: value
+                for key, value in data.items()
+                if all(field in value and value[field] for field in required_fields)
+            }
+        return filtered_data
 
     def verify_url(self):
         content_name = self.driver.find_elements(By.CSS_SELECTOR, self.kino["css_selector"]["content_name"])
