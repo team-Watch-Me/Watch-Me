@@ -49,6 +49,11 @@ class KinoCrawler:
                 for key, value in data.items()
                 if all(field in value and value[field] for field in required_fields)
             }
+
+        for movie_title, movie_info in data.items():
+        # 각 영화의 english_name 리스트에서 첫 번째 항목을 처리
+            if 'english_name' in movie_info:
+                movie_info['english_name'] = [name.split(' ·')[0] for name in movie_info['english_name']]
         return filtered_data
 
     def verify_url(self):
@@ -73,3 +78,4 @@ class KinoCrawler:
                 time.sleep(0.2)
         except:
             return
+        
