@@ -1,6 +1,9 @@
 {
   "css_selector": {
     "content_name": "#contents > div.movie-info-container > div.content-info > div.movie-header-area > div.movie-title-wrap > h2",
+    "english_name":"#contents > div.movie-info-container > div.content-info > div.movie-header-area > div.movie-title-wrap > p > span",
+    "staff":"#contents > div.info.tab-item > section:nth-child(3) > div > div:nth-child(2) > div.person__staff > div:nth-child(1) > div",
+    "actor":"#contents > div.info.tab-item > section:nth-child(3) > div > div:nth-child(2) > div.person__actor > div > a > div:nth-child(2) > div:nth-child(1)",
     "streaming_provider": "#streamingVodList > div > div.price-item-provider > div.provider-info > div > span",
     "plot": "#contents > div.info.tab-item > section:nth-child(1) > div > div > div > span",
     "genre": "#contents > div.info.tab-item > section:nth-child(1) > ul > li:nth-child(1) > span.item__body",
