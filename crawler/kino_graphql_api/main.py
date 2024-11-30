@@ -3,8 +3,8 @@ from kino_data_extractor import KinoDataExtractor
 
 
 def main():
-    lower_bound = 50
-    upper_bound = 100
+    lower_bound = 0
+    upper_bound = -1
 
     dataExtractor = KinoDataExtractor(lower_bound, upper_bound)
     data = dataExtractor.extract()
