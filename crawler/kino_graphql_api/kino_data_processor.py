@@ -35,7 +35,7 @@ class KinoDataProcessor:
         for provider in movieInfo['data']['movie']['vodOfferItems']:
             if provider['monetizationType'] != 'streaming':
                 continue
-            if self.provider_mapping[provider['providerId']] is not None:
+            if provider['providerId'] in self.provider_mapping:
                 data['streaming_provider'].append(self.provider_mapping[provider['providerId']])
 
         data['country'] = []
@@ -49,5 +49,9 @@ class KinoDataProcessor:
         data['actor'] = []
         for actor in staffInfo['data']['actors']:
             data['actor'].append(actor['person']['nameKr'])
+
+        for key, value in data.items():
+            if not value:
+                return None
 
         return data
