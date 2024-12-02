@@ -25,6 +25,7 @@ class KinoDataProcessor:
         data = {}
 
         data['content_name'] = movieInfo['data']['movie']['titleKr']
+        data['english_name'] = movieInfo['data']['movie']['titleEn']
         data['plot'] = movieInfo['data']['movie']['synopsis']
         data['genre'] = movieInfo['data']['movie']['genres']
         data['age_rating'] = movieInfo['data']['movie']['rating']
