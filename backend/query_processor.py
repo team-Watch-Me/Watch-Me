@@ -43,7 +43,7 @@ class QueryProcessor:
         movie.actor = response['_source']['actor']
         movie.staff = response['_source']['staff']
         movie.poster_url = ""  # todo
-        movie.ott_provider = [] # todo
+        movie.ott_provider = []  # todo
 
         result.append(movie)
 
