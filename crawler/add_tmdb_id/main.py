@@ -29,9 +29,6 @@ for row in md.itertuples():
     print(f"{idx}) {row.content_name}'s tmdb_id: {tmdb_id}")
     idx = idx + 1
 
-    if idx == 10:
-        break
-
 
 
 # tmdb_id가 NaN인 행 제거
