@@ -7,15 +7,16 @@ from search_from_tmdb import get_movie_details
 
 # JSON 파일 경로
 file_num = 1
-file_paths = ['data/result 10000.json']
+file_paths = ['data/result 10000.json', 'data/result 15000.json',
+              'data/result 20000.json', 'data/result 25000.json', 'data/result 30000.json']
 """
-['/kaggle/input/crawl-data/result 95000.json', '/kaggle/input/crawl-data/result 100000.json',
-              '/kaggle/input/crawl-data/result 105000.json', '/kaggle/input/crawl-data/result 110000.json',
-              '/kaggle/input/crawl-data/result 115000.json', '/kaggle/input/crawl-data/result 120000.json']
+['data/result 95000.json', 'data/result 100000.json',
+              'data/result 105000.json', 'data/result 110000.json',
+              'data/result 115000.json', 'data/result 120000.json']
 """
 for file_path in file_paths:
     # JSON 파일 읽기
-    with open(file_path, 'r') as file:
+    with open(file_path, 'r', encoding='utf-8') as file:
         md_dict = json.load(file)
 
     # DataFrame으로 변환
@@ -36,6 +37,7 @@ for file_path in file_paths:
         md.loc[row.Index, 'tmdb_id'] = tmdb_id
         print(f"{file_num} - {idx}) {row.content_name}'s tmdb_id: {tmdb_id}")
         idx = idx + 1
+
 
     # tmdb_id가 NaN인 행 제거
     md = md.dropna(subset=['tmdb_id'])
