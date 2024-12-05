@@ -192,7 +192,6 @@ def get_tmdb_id(content):
             for id in movies_eng['id']:
                 movies_id.add(id)
 
-
     movie = filter_by_overview(movies_id, content.plot, content.year)
 
     if movie is None:
