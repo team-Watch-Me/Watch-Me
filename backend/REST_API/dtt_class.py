@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List, Tuple
 
 
 class MainPage(BaseModel):
@@ -22,6 +22,7 @@ class SearchPage(BaseModel):
 
 class ReturnMovie(BaseModel):
     title: str = None
+    titleEn: str = None
     genre: List[str] = None
     age_rating: str = None
     country: List[str] = None
@@ -31,4 +32,5 @@ class ReturnMovie(BaseModel):
     poster_url: str = None
     actor: List[str] = None
     staff: List[str] = None
-    ott_provider: List[str] = None
+    ott_provider: List[List[str]] = None
+    releases: List[List[str]] = None

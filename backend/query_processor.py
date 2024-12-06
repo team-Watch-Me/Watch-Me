@@ -2,7 +2,7 @@ from opensearchpy import OpenSearch, RequestsHttpConnection
 from requests_aws4auth import AWS4Auth
 import boto3
 
-from backend.REST_API.dtt_class import *
+from REST_API.dtt_class import *
 
 host = 'search-watch-me-opensearch-zsvsvo2lqm56sz2pnirhero2pe.aos.ap-southeast-2.on.aws'
 region = 'ap-southeast-2'
@@ -21,33 +21,112 @@ class QueryProcessor:
             verify_certs=True,
             connection_class=RequestsHttpConnection
         )
-        pass
 
-    def search_movie(self, id):
-        response = self.opensearch_client.get(index="movies", id=id)
+    def create_search_page_query(self, key, OTT):
+        query = {
+            "query": {
+                "bool": {
+                    "must": [
+                        {
+                            "bool": {
+                                "should": [
+                                    {"match": {"titleKr": key}},
+                                    {"match": {"titleEn": key}},
+                                    {"match": {"titleOri": key}},
+                                    {"terms": {"genres": [key]}},
+                                    {"terms": {"actor": [key]}},
+                                    {"terms": {"staff": [key]}}
+                                ],
+                                "minimum_should_match": 1
+                            }
+                        }
+                    ],
+                    "filter": [
+                        {"terms": {"streaming_provider": OTT}}
+                    ]
+                }
+            }
+        }
+
+        return query
+
+
+    def create_main_page_query(self, key, OTT):
+        query = {
+            "query": {
+                "bool": {
+                    "must": [
+                        {"terms": {"genres": [key]}}
+                    ],
+                    "filter": [
+                        {"terms": {"streaming_provider": OTT}}
+                    ]
+                }
+            }
+        }
+        return query
+
+    def search_movie(self, index, query):
+        response = self.opensearch_client.search(index=index, body=query)
         return response
 
-    def process_search_page(self, item):
+    def process_response(self, response):
         result = []
+        for hit in response['hits']['hits']:  # todo = 반복문 순회해서 상위 ~개로 만들기
+            movie = ReturnMovie()
 
-        movie = ReturnMovie()
-        response = self.search_movie(item.searchString)  # todo = 반복문 순회해서 상위 ~개로 만들기
+            movie.title = hit['_source']['titleKr']
+            movie.titleEn = hit['_source']['titleEn']
+            movie.genre = hit['_source']['genres']
+            movie.age_rating = hit['_source']['age_rating']
+            movie.country = hit['_source']['country']
+            movie.year = hit['_source']['openYear']
+            movie.running_time = hit['_source']['running_time']
+            movie.description = hit['_source']['synopsis']
+            movie.actor = hit['_source']['actor']
+            movie.staff = hit['_source']['staff']
+            movie.poster_url = hit['_source']['posterImage']
+            movie.ott_provider = hit['_source']['streaming_provider']
 
-        movie.title = response['_source']['content_name']
-        movie.genre = response['_source']['genre']
-        movie.age_rating = response['_source']['age_rating']
-        movie.country = response['_source']['country']
-        movie.year = response['_source']['year']
-        movie.running_time = response['_source']['running_time']
-        movie.description = response['_source']['plot']
-        movie.actor = response['_source']['actor']
-        movie.staff = response['_source']['staff']
-        movie.poster_url = ""  # todo
-        movie.ott_provider = []  # todo
+            if len(result) >= 10:
+                break
 
-        result.append(movie)
+            result.append(movie)
 
         return result
 
+    def process_search_page(self, item):
+        filter = []
+
+        if item.netflix_selected is True:
+            filter.append("넷플릭스")
+        if item.tving_selected is True:
+            filter.append("티빙")
+        if item.coupang_selected is True:
+            filter.append("쿠팡플레이")
+        if item.watcha_selected is True:
+            filter.append("왓챠")
+        if item.wavve_selected is True:
+            filter.append("웨이브")
+
+        query = self.create_search_page_query(item.searchString, filter)
+        response = self.search_movie("movies", query)
+        return self.process_response(response)
+
     def process_main_page(self, item):
-        pass
+        filter = []
+
+        if item.netflix_selected is True:
+            filter.append("넷플릭스")
+        if item.tving_selected is True:
+            filter.append("티빙")
+        if item.coupang_selected is True:
+            filter.append("쿠팡플레이")
+        if item.watcha_selected is True:
+            filter.append("왓챠")
+        if item.wavve_selected is True:
+            filter.append("웨이브")
+
+        query = self.create_main_page_query(item.genre, filter)
+        response = self.search_movie("movies", query)
+        return self.process_response(response)
