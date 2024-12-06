@@ -23,7 +23,7 @@ class KinoDataExtractor:
             if result is None:
                 continue
 
-            content_name = result["content_name"]
+            content_name = result["id"]
             data[content_name] = result
 
         return data
