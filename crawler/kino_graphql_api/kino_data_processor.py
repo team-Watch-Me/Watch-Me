@@ -24,12 +24,16 @@ class KinoDataProcessor:
 
         data = {}
 
-        data['content_name'] = movieInfo['data']['movie']['titleKr']
-        data['english_name'] = movieInfo['data']['movie']['titleEn']
-        data['plot'] = movieInfo['data']['movie']['synopsis']
-        data['genre'] = movieInfo['data']['movie']['genres']
+        data['id'] = movieInfo['data']['movie']['id']
+        data['titleKr'] = movieInfo['data']['movie']['titleKr']
+        data['titleEn'] = movieInfo['data']['movie']['titleEn']
+        data['titleOri'] = movieInfo['data']['movie']['titleOri']
+        data['synopsis'] = movieInfo['data']['movie']['synopsis']
+        data['genres'] = movieInfo['data']['movie']['genres']
+        data['productionYear'] = movieInfo['data']['movie']['productionYear']
+        data['posterImage'] = movieInfo['data']['movie']['posterImage']['pathUrl']
         data['age_rating'] = movieInfo['data']['movie']['rating']
-        data['year'] = movieInfo['data']['movie']['openYear']
+        data['openYear'] = movieInfo['data']['movie']['openYear']
         data['running_time'] = movieInfo['data']['movie']['showTime']
 
         data['streaming_provider'] = []
@@ -37,11 +41,15 @@ class KinoDataProcessor:
             if provider['monetizationType'] != 'streaming':
                 continue
             if provider['providerId'] in self.provider_mapping:
-                data['streaming_provider'].append(self.provider_mapping[provider['providerId']])
+                data['streaming_provider'].append((self.provider_mapping[provider['providerId']], provider['url']))
 
         data['country'] = []
         for country in movieInfo['data']['movie']['nations']:
             data['country'].append(country['name'])
+
+        data['releases'] = []
+        for release in movieInfo['data']['movie']['releases']:
+            data['releases'].append(release)
 
         data['staff'] = []
         for staff in staffInfo['data']['directors']:
