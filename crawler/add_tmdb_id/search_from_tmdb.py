@@ -10,6 +10,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 BASE_URL = "https://api.themoviedb.org/3"
 BEARER_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzY2JlN2Q1ZWRkMjk0MDVlNmJmZmU4NjRjMmQ1MTc3NCIsIm5iZiI6MTczMTgzMzcyNS45MzE5MzAzLCJzdWIiOiI2NmQ2NmNmODczOTg5ZTk5YTA5NGIxNDAiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.iusuq7CPQbgNdWm6gBl1Fp3oNSLPYxd6bNoFesp2V8g"
 
+
 def search_movie_by_title(title):
     """영화 제목으로 TMDB에서 검색합니다."""
     url = f"{BASE_URL}/search/movie"
@@ -19,27 +20,27 @@ def search_movie_by_title(title):
     }
     params = {
         "query": title,  # 검색할 영화 제목
-        "language": "ko",  # 한국어 응답
+        "language": "ko",  # 한국어 응답 (영어 제목)
     }
 
-    while True:  # 무한 루프를 사용하여 에러 발생 시 재시도
+    while True:  # 무한 루프를 사용하여 SSLError 발생 시 재시도
         try:
             response = requests.get(url, headers=headers, params=params)
             if response.status_code == 200:
                 return pd.DataFrame(response.json()['results'])
             else:
                 print(f"Error at search_movie_by_title\n")
-                print(f"Title: {title}\nError: {response.status_code}")
+                print(f"Title:{title}\nError: {response.status_code}")
                 print(response.text)
                 print("\n\n")
                 return None
-        except (requests.exceptions.SSLError, requests.exceptions.ConnectionError, ConnectionResetError) as e:
-            print(f"Network error occurred while searching for movie: {title}. Retrying in 5 seconds...\nError: {e}")
+        except requests.exceptions.SSLError as e:
+            print(f"SSLError occurred while searching for movie: {title}. Retrying in 5 seconds...")
             time.sleep(5)  # 5초 대기 후 재시도
 
 
 def search_movie_by_title_eng(title):
-    """영화 제목으로 TMDB에서 검색합니다 (영어 제목)."""
+    """영화 제목으로 TMDB에서 검색합니다."""
     url = f"{BASE_URL}/search/movie"
     headers = {
         "accept": "application/json",
@@ -47,22 +48,22 @@ def search_movie_by_title_eng(title):
     }
     params = {
         "query": title,  # 검색할 영화 제목
-        "language": "en-US",  # 영어 응답
+        "language": "en: US",  # 영어 응답 (영어 제목)
     }
 
-    while True:  # 무한 루프를 사용하여 에러 발생 시 재시도
+    while True:  # 무한 루프를 사용하여 SSLError 발생 시 재시도
         try:
             response = requests.get(url, headers=headers, params=params)
             if response.status_code == 200:
                 return pd.DataFrame(response.json()['results'])
             else:
                 print(f"Error at search_movie_by_title_eng\n")
-                print(f"Title: {title}\nError: {response.status_code}")
+                print(f"Title:{title}\nError: {response.status_code}")
                 print(response.text)
                 print("\n\n")
                 return None
-        except (requests.exceptions.SSLError,requests.exceptions.ConnectionError, ConnectionResetError) as e:
-            print(f"Network error occurred while searching for movie (English): {title}. Retrying in 5 seconds...\nError: {e}")
+        except requests.exceptions.SSLError as e:
+            print(f"SSLError occurred while searching for movie (English): {title}. Retrying in 5 seconds...")
             time.sleep(5)  # 5초 대기 후 재시도
 
 
@@ -77,7 +78,7 @@ def get_movie_details(movie_id):
         "language": "ko",  # 한국어로 요청하여 한국어 포스터 포함
     }
 
-    while True:  # 무한 루프를 사용하여 에러 발생 시 재시도
+    while True:  # 무한 루프를 사용하여 SSLError 발생 시 재시도
         try:
             response = requests.get(url, headers=headers, params=params)
             if response.status_code == 200:
@@ -94,12 +95,12 @@ def get_movie_details(movie_id):
                 return df
             else:
                 print(f"Error at get_movie_details\n")
-                print(f"Movie_Id: {movie_id}\nError: {response.status_code}")
+                print(f"Movie_Id:{movie_id}\nError: {response.status_code}")
                 print(response.text)
                 print("\n\n")
                 return None
-        except (requests.exceptions.SSLError, requests.exceptions.ConnectionError, ConnectionResetError) as e:
-            print(f"Network error occurred while fetching movie details (ID: {movie_id}). Retrying in 5 seconds...\nError: {e}")
+        except requests.exceptions.SSLError as e:
+            print(f"SSLError occurred while fetching movie details (ID: {movie_id}). Retrying in 5 seconds...")
             time.sleep(5)  # 5초 대기 후 재시도
 
 
@@ -174,24 +175,23 @@ def get_tmdb_id(content):
     """
     content를 itertuples()로 받아서 tmdb의 id를 반환해주는 함수
     """
-    # movies_id = search_tmdb_movie(content.content_name)
     movies_id = set()
 
     # 영화 검색
-    movies = search_movie_by_title(content.content_name)
+    movies = search_movie_by_title(content.titleKr)
     if movies is not None:
         if 'id' in movies.columns:  # 'id' 컬럼이 있는지 확인
             for id in movies['id']:
                 movies_id.add(id)
 
     # 영어 제목 검색
-    movies_eng = search_movie_by_title_eng(content.english_name)
+    movies_eng = search_movie_by_title_eng(content.titleEn)
     if movies_eng is not None:
         if 'id' in movies_eng.columns:  # 'id' 컬럼이 있는지 확인
             for id in movies_eng['id']:
                 movies_id.add(id)
 
-    movie = filter_by_overview(movies_id, content.plot, content.year)
+    movie = filter_by_overview(movies_id, content.synopsis, content.openYear)
 
     if movie is None:
         print(f"{content.content_name} is None\n")

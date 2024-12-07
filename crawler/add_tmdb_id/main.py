@@ -7,16 +7,11 @@ from search_from_tmdb import get_movie_details
 
 # JSON 파일 경로
 file_num = 1
-file_paths = ['data/result 10000.json', 'data/result 15000.json',
-              'data/result 20000.json', 'data/result 25000.json', 'data/result 30000.json']
-"""
-['data/result 95000.json', 'data/result 100000.json',
-              'data/result 105000.json', 'data/result 110000.json',
-              'data/result 115000.json', 'data/result 120000.json']
-"""
+file_paths = ['data/result_100000_to_140000.json']
+
 for file_path in file_paths:
     # JSON 파일 읽기
-    with open(file_path, 'r', encoding='utf-8') as file:
+    with open(file_path, 'r') as file:
         md_dict = json.load(file)
 
     # DataFrame으로 변환
@@ -27,17 +22,14 @@ for file_path in file_paths:
 
     idx = 1
     for row in md.itertuples():
-        # if row.content_name != "내 사랑 싸가지":
-        #     continue
         if hasattr(row, 'tmdb_id') and pd.notna(row.tmdb_id):
             continue
         tmdb_id = get_tmdb_id(row)
         if tmdb_id is None:
             continue
         md.loc[row.Index, 'tmdb_id'] = tmdb_id
-        print(f"{file_num} - {idx}) {row.content_name}'s tmdb_id: {tmdb_id}")
+        print(f"{file_num} - {idx}) {row.titleKr}'s tmdb_id: {tmdb_id}")
         idx = idx + 1
-
 
     # tmdb_id가 NaN인 행 제거
     md = md.dropna(subset=['tmdb_id'])
@@ -45,34 +37,44 @@ for file_path in file_paths:
     # tmdb_id를 int로 변환
     md['tmdb_id'] = md['tmdb_id'].astype(int)
 
-    # 'titleId' 열이 존재하는 경우에만 제거
-    if 'titleId' in md.columns:
-        md.drop(columns=['titleId'], inplace=True)
-
-    # 열 이름 변경
-    md.rename(columns={
-        'content_name': 'name_kr',
-        'english_name': 'name_eng'
-    }, inplace=True)
-
-    # poster image랑 release-date 추가
+    """
+    tmdb에서 갖고 오는 내용
+    1. poster image
+    2. release date
+    3. vote count
+    4. vote average
+    5. popularity
+    """
     for row in md.itertuples():
         movie_details = get_movie_details(row.tmdb_id)
 
+        # 포스터 이미지
         poster_path = movie_details.get('poster_path')[0]
         if poster_path is not None:
-            md.loc[row.Index, 'poster_img'] = "https://image.tmdb.org/t/p/w500" + poster_path
+            md.loc[row.Index, 'tmdb_poster_img'] = "https://image.tmdb.org/t/p/original" + poster_path
 
+        # release_date
         release_date = movie_details.get('release_date')[0]
         if release_date is not None:
-            md.loc[row.Index, 'release_date'] = release_date
+            md.loc[row.Index, 'tmdb_release_date'] = release_date
 
-    # 원하는 열 순서
-    column_order = ['tmdb_id', 'name_kr', 'name_eng', 'plot', 'genre', 'age_rating', 'year', 'running_time',
-                    'streaming_provider', 'country', 'staff', 'actor', 'poster_img', 'release_date']
+        # vote_count
+        vote_count = movie_details.get('vote_count')[0]
+        if vote_count is not None:
+            md.loc[row.Index, 'vote_count'] = vote_count
 
-    # 열 순서대로 데이터프레임 재배열
-    md = md[column_order]
+        # vote_avearge
+        vote_average = movie_details.get('vote_average')[0]
+        if vote_average is not None:
+            md.loc[row.Index, 'vote_average'] = vote_average
+
+        # popularity
+        popularity = movie_details.get('popularity')[0]
+        if popularity is not None:
+            md.loc[row.Index, 'popularity'] = popularity
+
+    # 키노 id의 속성 이름을 'id'에서 'kino_id'로 변경
+    md.rename(columns={'id': 'kino_id'}, inplace=True)
 
     # output 폴더가 없으면 생성
     output_dir = 'output_with_tmdb'
