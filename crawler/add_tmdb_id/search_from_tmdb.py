@@ -194,7 +194,7 @@ def get_tmdb_id(content):
     movie = filter_by_overview(movies_id, content.synopsis, content.openYear)
 
     if movie is None:
-        print(f"{content.content_name} is None\n")
+        print(f"{content.titleKr} is None\n")
         return None
 
     return movie

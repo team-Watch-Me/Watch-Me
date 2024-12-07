@@ -11,7 +11,7 @@ file_paths = ['data/result_100000_to_140000.json']
 
 for file_path in file_paths:
     # JSON 파일 읽기
-    with open(file_path, 'r') as file:
+    with open(file_path, 'r', encoding='utf-8') as file:
         md_dict = json.load(file)
 
     # DataFrame으로 변환
