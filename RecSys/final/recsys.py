@@ -26,24 +26,29 @@ class RecommendationSystem:
         """
         초기 load
         """
+        
         self.hybrid_weight = {
             "weight_description": 0.25,
             "weight_metadata": 0.75
         }
+        # ToDo: load하는 주소들 변경
         self.cosine_sim_description = np.load(
             'final/data/cosine_sim_description.npy')
+        # ToDo: load하는 주소들 변경
         self.cosine_sim_metadata = np.load(
             'final/data/cosine_sim_metadata.npy')
+        # ToDo: load하는 주소들 변경
         with open('final/data/indices.pkl', 'rb') as f:
             self.indices = pickle.load(f)
 
-        
+        # ToDo: load하는 주소들 변경
         self.ratings = pd.read_csv('final/data/ratings.csv')
 
-        
+        # ToDo: load하는 주소들 변경
         with open('final/data/svd_model.pkl', 'rb') as f:
             self.svd = pickle.load(f)
-
+        
+        # ToDo: load하는 주소들 변경
         self.md_original = pd.read_pickle('final/data/md.pkl')
 
     def get_md_filtered_by_ott_list(self, df, ott_list):
@@ -149,12 +154,14 @@ class RecommendationSystem:
         self.ratings = combined_ratings
 
         # ratings 파일 업데이트
+        # ToDo: 저장하는 주소들 변경
         self.ratings.to_csv("final/data/ratings.csv", index=False)
 
         # SVD 재학습
         self.svd.fit(self.ratings[['userId', 'movieId']], self.ratings['rating'])
 
         # SVD 파일 업데이트
+        # ToDo: 저장하는 주소들 변경
         with open('final/data/svd_model.pkl', 'wb') as f:
             pickle.dump(self.svd, f)
 
@@ -167,9 +174,9 @@ class RecommendationSystem:
         """
 
         md = self.get_qualified_md(ott_list)
-        print(md.shape)
+
         md = self.get_md_filtered_by_genre_list(md, genre_list)
-        print(md.shape)
+        
         return md[:top_n]
 
 
@@ -208,9 +215,8 @@ class RecommendationSystem:
         top_results = md.iloc[related_docs_indices[:top_n]]
 
         return top_results # ['tmdb_id'] <- id만 반환 하고 싶으면 이걸 이어붙이면 됨
-
-
-    def recommend_hybrid(self, user_id, title, ott_list):
+    
+    def recommend_hybrid_one(self, user_id, title, ott_list):
         """
         사용자에 알맞는 맞춤 추천을 제공
 
@@ -266,26 +272,114 @@ class RecommendationSystem:
         return movies[:10]
 
 
-# # 인스턴스 생성
-# rec_sys = RecommendationSystem()
 
-# # 데이터를 로드
-# try:
-#     rec_sys.load()
-# except FileNotFoundError:
-#     print("필요한 데이터 파일이 없습니다. 샘플 데이터를 사용하세요.")
+    def recommend_hybrid(self, user_id, titles, ott_list):
+        """
+        사용자에게 맞춤 추천을 제공 (여러 작품을 기반으로 추천)
+
+        input: user_id, titles (사용자가 평가한 여러 작품 리스트), ott_list
+        """
+        # OTT 필터링된 메타데이터 가져오기
+        md = self.get_md_filtered_by_ott_list(self.md_original, ott_list)
+
+        weight_description = self.hybrid_weight["weight_description"]
+        weight_metadata = self.hybrid_weight["weight_metadata"]
+
+        # 각 작품에 대한 유사도 계산 결과를 저장할 딕셔너리
+        combined_sim_scores = {}
+
+        for title in titles:
+            # 영화 제목을 통해 인덱스 가져오기
+            idx = self.indices[title]
+
+            # 영화 설명 유사도 (TF-IDF)와 메타데이터 유사도 가져오기
+            sim_scores_description = list(enumerate(self.cosine_sim_description[int(idx)]))
+            sim_scores_metadata = list(enumerate(self.cosine_sim_metadata[int(idx)]))
+
+            # md에서 유효한 인덱스를 가져오기
+            valid_indices = md.index.tolist()
+
+            # 두 유사도 행렬을 결합 (가중합)
+            sim_scores = [
+                (i[0], weight_description * i[1] + weight_metadata * j[1])
+                for i, j in zip(sim_scores_description, sim_scores_metadata)
+            ]
+
+            # sim_scores에서 md에 포함된 인덱스만 남기도록 필터링
+            sim_scores_filtered = [score for score in sim_scores if str(score[0]) in valid_indices]
+
+            # 결과를 합산하여 통합
+            for idx, score in sim_scores_filtered:
+                if idx not in combined_sim_scores:
+                    combined_sim_scores[idx] = 0
+                combined_sim_scores[idx] += score
+
+        # 유사도 순으로 정렬 (가장 유사한 것부터)
+        combined_sim_scores = sorted(combined_sim_scores.items(), key=lambda x: x[1], reverse=True)
+
+        # 상위 25개 영화 선택 (자기 자신 제외)
+        top_sim_scores = combined_sim_scores[:25]
+        movie_indices = [str(i[0]) for i in top_sim_scores]
+
+        # 영화 데이터 가져오기 (제목, 투표수, 평균 평점, 년도, id)
+        movies = md.loc[movie_indices]
 
 
-# ott_list = ['넷플릭스', '티빙']
-# genre_list = ['액션', '코미디']
+        # 최소 vote_count를 기준으로 필터링 (예: 100 이상)
+        min_vote_count = 1
+        movies = movies[movies['vote_count'] >= min_vote_count]
+
+        # SVD를 통해 예측된 평점 계산
+        movies['est'] = movies['tmdb_id'].apply(lambda x: self.svd.predict(user_id, x).est)
+
+        # 예측된 평점 기준으로 상위 10개 영화 추천
+        movies = movies.sort_values('est', ascending=False)
+
+        return movies[:10]
+
+"""
+# 인스턴스 생성
+rec_sys = RecommendationSystem()
+
+# 데이터를 로드
+try:
+    rec_sys.load()
+except FileNotFoundError:
+    print("필요한 데이터 파일이 없습니다. 샘플 데이터를 사용하세요.")
+
+
+ott_list = ['넷플릭스', '티빙', '웨이브', '디즈니+', '왓챠']
+genre_list = []
 
 # result = rec_sys.recommend_simple(ott_list=ott_list, genre_list=genre_list)
 # print(result[['titleKr', 'vote_average', 'vote_count']])
 
-# query = "범죄도시"
+# for elem in result.itertuples():
+#     print(elem.tmdb_id)
+
+
+# ott_list.append("넷플릭스")
+
+# ott_list.append("티빙")
+
+# ott_list.append("쿠팡플레이")
+
+# ott_list.append("왓챠")
+
+# ott_list.append("웨이브")
+
+# print(ott_list)
+
+
+# query = "과속스캔들"
 # result = rec_sys.recommend_search(query=query, ott_list=ott_list, genre_list=genre_list)
 # print(result[['titleKr', 'vote_average', 'vote_count',  'genres']])
 
-# title = "범죄도시"
-# result = rec_sys.recommend_hybrid(user_id=1, title=title, ott_list=ott_list)
-# print(result[['titleKr', 'vote_average', 'vote_count',  'genres', 'streaming_provider']])
+title = "범죄도시" #, "범죄도시 2"]
+result = rec_sys.recommend_hybrid_one(user_id=1, title=title, ott_list=ott_list)
+print(result[['titleKr', 'vote_average', 'vote_count',  'genres', 'streaming_provider']])
+print("---------------------------------------------------------")
+title = ["범죄도시", "과속스캔들", "콘크리트 유토피아"]
+result = rec_sys.recommend_hybrid(user_id=1, titles=title, ott_list=ott_list)
+print(result[['titleKr', 'vote_average', 'vote_count',  'genres', 'streaming_provider']])
+"""
