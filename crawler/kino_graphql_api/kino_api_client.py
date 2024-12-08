@@ -13,6 +13,7 @@ class KinoAPIClient:
 
     def make_request(self, movie_id):
         self.data["variables"]["movieId"] = movie_id
+
         response = requests.post(self.url, headers=self.headers, json=self.data)
 
         if response.status_code == 200:

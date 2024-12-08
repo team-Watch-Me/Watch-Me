@@ -15,7 +15,6 @@ class KinoDataProcessor:
         pass
 
     def process(self, movieInfo, staffInfo):
-
         if movieInfo['data']['movie'] is None:
             return None
 
@@ -58,9 +57,5 @@ class KinoDataProcessor:
         data['actor'] = []
         for actor in staffInfo['data']['actors']:
             data['actor'].append(actor['person']['nameKr'])
-
-        for key, value in data.items():
-            if not value:
-                return None
 
         return data

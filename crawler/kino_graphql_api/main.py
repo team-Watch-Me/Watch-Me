@@ -65,13 +65,14 @@ def crawl_with_retries(result_file, start_index, end_index, record):
             logging.error(f"Retrying from {start_index} due to error: {e}")
             time.sleep(5)  # 잠시 대기 후 재시도
 
-# 결과를 저장할 파일 경로
-result_file = 'result_95000_to_100000.json'
 
 # 마지막 성공적인 기록 범위 확인
-start_index = 95000 + 1
-end_index = 100000
+start_index = 9720
+end_index = 9721
 record = 25  # 언제마다 기록할 것인지
+
+# 결과를 저장할 파일 경로
+result_file = f'result_{start_index}_to_{end_index}.json'
 
 # 크롤링 실행
 crawl_with_retries(result_file, start_index, end_index, record)
