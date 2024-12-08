@@ -34,8 +34,9 @@ def search_movie_by_title(title):
                 print(response.text)
                 print("\n\n")
                 return None
-        except requests.exceptions.SSLError as e:
-            print(f"SSLError occurred while searching for movie: {title}. Retrying in 5 seconds...")
+        except (requests.exceptions.SSLError, requests.exceptions.ConnectionError, ConnectionResetError) as e:
+            print(
+                f"Network error occurred while searching for movie (English): {title}. Retrying in 5 seconds...\nError: {e}")
             time.sleep(5)  # 5초 대기 후 재시도
 
 
@@ -62,8 +63,9 @@ def search_movie_by_title_eng(title):
                 print(response.text)
                 print("\n\n")
                 return None
-        except requests.exceptions.SSLError as e:
-            print(f"SSLError occurred while searching for movie (English): {title}. Retrying in 5 seconds...")
+        except (requests.exceptions.SSLError, requests.exceptions.ConnectionError, ConnectionResetError) as e:
+            print(
+                f"Network error occurred while searching for movie: {title}. Retrying in 5 seconds...\nError: {e}")
             time.sleep(5)  # 5초 대기 후 재시도
 
 
@@ -99,8 +101,9 @@ def get_movie_details(movie_id):
                 print(response.text)
                 print("\n\n")
                 return None
-        except requests.exceptions.SSLError as e:
-            print(f"SSLError occurred while fetching movie details (ID: {movie_id}). Retrying in 5 seconds...")
+        except (requests.exceptions.SSLError, requests.exceptions.ConnectionError, ConnectionResetError) as e:
+            print(
+                f"Network error occurred while fetching movie details (ID: {movie_id}). Retrying in 5 seconds...\nError: {e}")
             time.sleep(5)  # 5초 대기 후 재시도
 
 
@@ -194,7 +197,7 @@ def get_tmdb_id(content):
     movie = filter_by_overview(movies_id, content.synopsis, content.openYear)
 
     if movie is None:
-        print(f"{content.content_name} is None\n")
+        print(f"{content.titleKr} is None\n")
         return None
 
     return movie
