@@ -30,7 +30,11 @@ class KinoDataProcessor:
         data['synopsis'] = movieInfo['data']['movie']['synopsis']
         data['genres'] = movieInfo['data']['movie']['genres']
         data['productionYear'] = movieInfo['data']['movie']['productionYear']
-        data['posterImage'] = movieInfo['data']['movie']['posterImage']['pathUrl']
+        # posterImage가 존재할 때만 처리
+        if 'posterImage' in movieInfo['data']['movie'] and movieInfo['data']['movie']['posterImage'] is not None:
+            data['posterImage'] = movieInfo['data']['movie']['posterImage']['pathUrl']
+        else:
+            data['posterImage'] = None  # 또는 원하는 기본값으로 설정
         data['age_rating'] = movieInfo['data']['movie']['rating']
         data['openYear'] = movieInfo['data']['movie']['openYear']
         data['running_time'] = movieInfo['data']['movie']['showTime']
