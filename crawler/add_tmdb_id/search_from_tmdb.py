@@ -165,11 +165,11 @@ def filter_by_overview(movies_id, target_overview, target_year):
             continue
 
         overview = movie_details.get('overview')[0]
-        if len(overview) == 0:
+        if len(overview) <= 5:
             # print("overview no")
             movie_details = get_movie_details_eng(id)
             overview = movie_details.get('overview')[0]
-            if len(overview) == 0:
+            if len(overview) <= 5:
                 continue
 
         release_date = movie_details.get('release_date')[0]
@@ -203,6 +203,8 @@ def filter_by_overview(movies_id, target_overview, target_year):
             print(f"id_list is empty len(id_list2): {len(id_list2)}\n")
             return None
 
+    if len(all_overviews) == 0:
+        return None
     vectorizer = TfidfVectorizer()
     tfidf_matrix = vectorizer.fit_transform(all_overviews)
 
