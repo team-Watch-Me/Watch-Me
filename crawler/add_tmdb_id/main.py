@@ -7,7 +7,7 @@ from search_from_tmdb import get_movie_details
 
 # JSON 파일 경로
 file_num = 1
-file_paths = ['data/result_100000_to_140000.json']
+file_paths = ['data/result_120000_to_140000.json', 'data/result_136000_to_140000.json', 'data/result_1_to_20000.json']
 
 for file_path in file_paths:
     # JSON 파일 읽기
@@ -24,12 +24,14 @@ for file_path in file_paths:
     for row in md.itertuples():
         if hasattr(row, 'tmdb_id') and pd.notna(row.tmdb_id):
             continue
+
         tmdb_id = get_tmdb_id(row)
         if tmdb_id is None:
             continue
         md.loc[row.Index, 'tmdb_id'] = tmdb_id
         print(f"{file_num} - {idx}) {row.titleKr}'s tmdb_id: {tmdb_id}")
         idx = idx + 1
+
 
     # tmdb_id가 NaN인 행 제거
     md = md.dropna(subset=['tmdb_id'])

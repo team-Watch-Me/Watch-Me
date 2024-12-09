@@ -37,7 +37,7 @@ def search_movie_by_title(title):
         except (requests.exceptions.SSLError, requests.exceptions.ConnectionError, ConnectionResetError) as e:
             print(
                 f"Network error occurred while searching for movie (English): {title}. Retrying in 5 seconds...\nError: {e}")
-            time.sleep(5)  # 5초 대기 후 재시도
+            time.sleep(20)  # 5초 대기 후 재시도
 
 
 def search_movie_by_title_eng(title):
@@ -66,7 +66,7 @@ def search_movie_by_title_eng(title):
         except (requests.exceptions.SSLError, requests.exceptions.ConnectionError, ConnectionResetError) as e:
             print(
                 f"Network error occurred while searching for movie: {title}. Retrying in 5 seconds...\nError: {e}")
-            time.sleep(5)  # 5초 대기 후 재시도
+            time.sleep(20)  # 5초 대기 후 재시도
 
 
 def get_movie_details(movie_id):
@@ -125,17 +125,25 @@ def filter_by_overview(movies_id, target_overview, target_year):
         movie_details = get_movie_details(id)
 
         if movie_details is None:
-            continue;
+            continue
 
         overview = movie_details.get('overview')[0]
         if len(overview) == 0:
             # print("overview no")
-            continue
+            movie_details = get_movie_details_eng(id)
+            overview = movie_details.get('overview')[0]
+            if len(overview) == 0:
+                continue
+
         release_date = movie_details.get('release_date')[0]
         if release_date is None:
+            all_overviews2.append(overview)
+            id_list2.append(id)
             continue
         year = release_date.split("-")[0]
         if year is None or year == "":
+            all_overviews2.append(overview)
+            id_list2.append(id)
             continue
 
         if abs(int(year) - int(target_year)) > 2:
