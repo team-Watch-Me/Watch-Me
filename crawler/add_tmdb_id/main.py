@@ -6,7 +6,7 @@ from search_from_tmdb import get_tmdb_id, get_movie_details
 import time  # 딜레이를 위해 추가
 
 # JSON 파일 경로
-file_paths = ['data/result_120000_to_140000.json', 'data/result_136000_to_140000.json', 'data/result_1_to_20000.json']
+file_paths = ['data/result_80000_to_100000.json']
 
 # 최대 재시도 횟수 설정
 MAX_RETRIES = 30
@@ -52,8 +52,7 @@ for file_path in file_paths:
 
     for row in md.itertuples():
         # 이미 처리된 경우 건너뛰기
-        print(f"row.Index: {row.Index}")
-        if row.Index in combined_df['kino_id']:
+        if len(combined_df) != 0 and row.Index in combined_df['kino_id']:
             print(f"already: {row.Index}")
             continue
         # if hasattr(row, 'tmdb_id') and pd.notna(row.tmdb_id) and int(row.Index) in processed_tmdb_ids:
