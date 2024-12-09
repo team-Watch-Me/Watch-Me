@@ -104,7 +104,44 @@ def get_movie_details(movie_id):
         except (requests.exceptions.SSLError, requests.exceptions.ConnectionError, ConnectionResetError) as e:
             print(
                 f"Network error occurred while fetching movie details (ID: {movie_id}). Retrying in 5 seconds...\nError: {e}")
-            time.sleep(5)  # 5초 대기 후 재시도
+            time.sleep(20)  # 5초 대기 후 재시도
+
+def get_movie_details_eng(movie_id):
+    """영화 ID를 사용하여 TMDB에서 영화의 상세 정보를 가져옵니다 (한국어 포스터 포함)."""
+    url = f"{BASE_URL}/movie/{movie_id}"
+    headers = {
+        "accept": "application/json",
+        "Authorization": f"Bearer {BEARER_TOKEN}",
+    }
+    params = {
+        "language": "en: US",  # 한국어로 요청하여 한국어 포스터 포함
+    }
+
+    while True:  # 무한 루프를 사용하여 SSLError 발생 시 재시도
+        try:
+            response = requests.get(url, headers=headers, params=params)
+            if response.status_code == 200:
+                data = response.json()
+
+                # 리스트 데이터를 문자열로 변환 (필요시 더 세분화 가능)
+                data['genres'] = ', '.join([genre['name'] for genre in data['genres']])
+                data['production_companies'] = ', '.join([company['name'] for company in data['production_companies']])
+                data['production_countries'] = ', '.join([country['name'] for country in data['production_countries']])
+                data['spoken_languages'] = ', '.join([language['name'] for language in data['spoken_languages']])
+
+                # 데이터프레임 변환
+                df = pd.DataFrame([data])
+                return df
+            else:
+                print(f"Error at get_movie_details\n")
+                print(f"Movie_Id:{movie_id}\nError: {response.status_code}")
+                print(response.text)
+                print("\n\n")
+                return None
+        except (requests.exceptions.SSLError, requests.exceptions.ConnectionError, ConnectionResetError) as e:
+            print(
+                f"Network error occurred while fetching movie details (ID: {movie_id}). Retrying in 5 seconds...\nError: {e}")
+            time.sleep(20)  # 5초 대기 후 재시도
 
 
 def filter_by_overview(movies_id, target_overview, target_year):
