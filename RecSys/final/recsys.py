@@ -315,6 +315,10 @@ class RecommendationSystem:
 
         input: user_id, tmdb_ids (리스트), ott_list
         """
+        if len(tmdb_ids) == 0:
+            return self.get_qualified_md(ott_list=ott_list)
+
+
         # 영화 데이터 필터링
         md = self.get_md_filtered_by_ott_list(self.md_original, ott_list)
 
@@ -411,6 +415,6 @@ class RecommendationSystem:
 # result = rec_sys.recommend_hybrid_one(user_id="se1", tmdb_id=619803, ott_list=ott_list)
 # print(result[['titleKr', 'vote_average', 'vote_count',  'genres', 'streaming_provider']])
 # print("---------------------------------------------------------")
-# title = [18384, 729854, 252067]
+# title = []
 # result = rec_sys.recommend_hybrid_multiple(user_id="se1", tmdb_ids=title, ott_list=ott_list)
 # print(result[['titleKr', 'vote_average', 'vote_count',  'genres', 'streaming_provider']])
