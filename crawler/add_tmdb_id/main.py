@@ -52,6 +52,7 @@ for file_path in file_paths:
 
     for row in md.itertuples():
         # 이미 처리된 경우 건너뛰기
+        print(f"row.Index: {row.Index}")
         if row.Index in combined_df['kino_id']:
             print(f"already: {row.Index}")
             continue
@@ -110,8 +111,12 @@ for file_path in file_paths:
                     # 'Index' 열을 'kino_id'로 변경
                     # if 'id' in combined_df.columns:
                     #     combined_df.rename(columns={'id': 'kino_id'}, inplace=True)
+                    # 삭제된 데이터와 유지된 데이터 분리
+                    combined_df['Index'] = combined_df['kino_id']  # 'Index' 칼럼 복사
 
                     combined_df = combined_df.drop_duplicates(subset=['Index'], keep='first')
+                    # removed_duplicates = combined_df[combined_df.duplicated(subset=['Index'], keep='first')]
+
 
                     # 'kino_id'를 기준으로 JSON 변환
                     try:
