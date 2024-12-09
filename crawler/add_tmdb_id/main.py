@@ -52,7 +52,8 @@ for file_path in file_paths:
 
     for row in md.itertuples():
         # 이미 처리된 경우 건너뛰기
-        if row.Index in combined_df.index:
+        if row.Index in combined_df['kino_id']:
+            print(f"already: {row.Index}")
             continue
         # if hasattr(row, 'tmdb_id') and pd.notna(row.tmdb_id) and int(row.Index) in processed_tmdb_ids:
         #     continue
