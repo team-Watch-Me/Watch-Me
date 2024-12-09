@@ -178,7 +178,7 @@ def filter_by_overview(movies_id, target_overview, target_year):
             id_list2.append(id)
             continue
         year = release_date.split("-")[0]
-        if year is None or year == "":
+        if year is None or year == "" or target_year is None or target_year == "":
             all_overviews2.append(overview)
             id_list2.append(id)
             continue
