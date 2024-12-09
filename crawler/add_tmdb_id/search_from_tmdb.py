@@ -36,7 +36,7 @@ def search_movie_by_title(title):
                 return None
         except (requests.exceptions.SSLError, requests.exceptions.ConnectionError, ConnectionResetError) as e:
             print(
-                f"Network error occurred while searching for movie (English): {title}. Retrying in 5 seconds...\nError: {e}")
+                f"Network error occurred while searching for movie (English): {title}. Retrying in 20 seconds...\nError: {e}")
             time.sleep(20)  # 5초 대기 후 재시도
 
 
@@ -65,7 +65,7 @@ def search_movie_by_title_eng(title):
                 return None
         except (requests.exceptions.SSLError, requests.exceptions.ConnectionError, ConnectionResetError) as e:
             print(
-                f"Network error occurred while searching for movie: {title}. Retrying in 5 seconds...\nError: {e}")
+                f"Network error occurred while searching for movie: {title}. Retrying in 20 seconds...\nError: {e}")
             time.sleep(20)  # 5초 대기 후 재시도
 
 
@@ -103,7 +103,7 @@ def get_movie_details(movie_id):
                 return None
         except (requests.exceptions.SSLError, requests.exceptions.ConnectionError, ConnectionResetError) as e:
             print(
-                f"Network error occurred while fetching movie details (ID: {movie_id}). Retrying in 5 seconds...\nError: {e}")
+                f"Network error occurred while fetching movie details (ID: {movie_id}). Retrying in 20 seconds...\nError: {e}")
             time.sleep(20)  # 5초 대기 후 재시도
 
 def get_movie_details_eng(movie_id):
@@ -140,7 +140,7 @@ def get_movie_details_eng(movie_id):
                 return None
         except (requests.exceptions.SSLError, requests.exceptions.ConnectionError, ConnectionResetError) as e:
             print(
-                f"Network error occurred while fetching movie details (ID: {movie_id}). Retrying in 5 seconds...\nError: {e}")
+                f"Network error occurred while fetching movie details (ID: {movie_id}). Retrying in 20 seconds...\nError: {e}")
             time.sleep(20)  # 5초 대기 후 재시도
 
 
