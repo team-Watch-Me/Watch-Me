@@ -1,12 +1,13 @@
 import pandas as pd
 import os
 import json
+import shutil
 import search_from_tmdb
 from search_from_tmdb import get_tmdb_id, get_movie_details
 import time  # 딜레이를 위해 추가
 
 # JSON 파일 경로
-file_paths = ['data/result_80000_to_100000.json']
+file_paths = ['data/result_120000_to_140000.json', 'data/result_136000_to_140000.json', 'data/result_1_to_20000.json']
 
 # 최대 재시도 횟수 설정
 MAX_RETRIES = 30
@@ -48,7 +49,6 @@ for file_path in file_paths:
     md = md.T
 
     md.rename(columns={'id': 'kino_id'}, inplace=True)
-
 
     for row in md.itertuples():
         # 이미 처리된 경우 건너뛰기
@@ -107,6 +107,9 @@ for file_path in file_paths:
 
                 # 25개마다 저장
                 if len(combined_df) % 25 == 0:
+                    backup_file = f"{output_file}.backup"
+                    if os.path.exists(output_file):
+                        shutil.copyfile(output_file, backup_file)
                     # 'Index' 열을 'kino_id'로 변경
                     # if 'id' in combined_df.columns:
                     #     combined_df.rename(columns={'id': 'kino_id'}, inplace=True)
@@ -139,12 +142,25 @@ for file_path in file_paths:
         if retry_count == MAX_RETRIES:
             print(f"Skipping row {row.Index} in {file_name} after {MAX_RETRIES} retries.")
 
+    backup_file = f"{output_file}.backup"
+    if os.path.exists(output_file):
+        shutil.copyfile(output_file, backup_file)
     # 'Index' 열을 'kino_id'로 변경
-    if 'Index' in combined_df.columns:
-        combined_df.rename(columns={'Index': 'kino_id'}, inplace=True)
+    # if 'id' in combined_df.columns:
+    #     combined_df.rename(columns={'id': 'kino_id'}, inplace=True)
+    # 삭제된 데이터와 유지된 데이터 분리
+    combined_df['Index'] = combined_df['kino_id']  # 'Index' 칼럼 복사
 
-    # 최종 저장: Kino ID를 키로 사용하여 딕셔너리 형태로 변환
-    final_data = combined_df.set_index('kino_id').T.to_dict('index')
+    combined_df = combined_df.drop_duplicates(subset=['Index'], keep='first')
+    # removed_duplicates = combined_df[combined_df.duplicated(subset=['Index'], keep='first')]
+
+    # 'kino_id'를 기준으로 JSON 변환
+    try:
+        final_data = combined_df.set_index('Index').to_dict(orient='index')
+    except KeyError as e:
+        print("KeyError: ", e)
+        print("Available columns: ", combined_df.columns)
+        raise e
 
     # JSON 파일로 저장
     with open(output_file, 'w', encoding='utf-8') as f:
