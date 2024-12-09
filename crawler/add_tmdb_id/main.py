@@ -142,9 +142,10 @@ for file_path in file_paths:
         if retry_count == MAX_RETRIES:
             print(f"Skipping row {row.Index} in {file_name} after {MAX_RETRIES} retries.")
 
-    backup_file = f"{output_file}.backup"
-    if os.path.exists(output_file):
-        shutil.copyfile(output_file, backup_file)
+
+    if len(combined_df) == 0:
+        continue
+
     # 'Index' 열을 'kino_id'로 변경
     # if 'id' in combined_df.columns:
     #     combined_df.rename(columns={'id': 'kino_id'}, inplace=True)
