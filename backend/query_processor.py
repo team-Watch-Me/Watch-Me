@@ -3,6 +3,7 @@ from requests_aws4auth import AWS4Auth
 import boto3
 
 from REST_API.dtt_class import *
+from Recommendation_System.recommendationsystem import RecommendationSystem
 
 host = 'search-watch-me-opensearch-zsvsvo2lqm56sz2pnirhero2pe.aos.ap-southeast-2.on.aws'
 region = 'ap-southeast-2'
@@ -22,57 +23,21 @@ class QueryProcessor:
             connection_class=RequestsHttpConnection
         )
 
-    def create_search_page_query(self, key, OTT):
+    @staticmethod
+    def create_id_query(key):
         query = {
             "query": {
-                "bool": {
-                    "must": [
-                        {
-                            "bool": {
-                                "should": [
-                                    {"match": {"titleKr": key}},
-                                    {"match": {"titleEn": key}},
-                                    {"match": {"titleOri": key}},
-                                    {"terms": {"genres": [key]}},
-                                    {"terms": {"actor": [key]}},
-                                    {"terms": {"staff": [key]}}
-                                ],
-                                "minimum_should_match": 1
-                            }
-                        }
-                    ],
-                    "filter": [
-                        {"terms": {"streaming_provider": OTT}}
-                    ]
-                }
-            }
-        }
-
-        return query
-
-
-    def create_main_page_query(self, key, OTT):
-        query = {
-            "query": {
-                "bool": {
-                    "must": [
-                        {"terms": {"genres": [key]}}
-                    ],
-                    "filter": [
-                        {"terms": {"streaming_provider": OTT}}
-                    ]
+                "term": {
+                    "_id": key
                 }
             }
         }
         return query
 
-    def search_movie(self, index, query):
-        response = self.opensearch_client.search(index=index, body=query)
-        return response
-
-    def process_response(self, response):
+    @staticmethod
+    def process_response(response):
         result = []
-        for hit in response['hits']['hits']:  # todo = 반복문 순회해서 상위 ~개로 만들기
+        for hit in response['hits']['hits']:
             movie = ReturnMovie()
 
             movie.title = hit['_source']['titleKr']
@@ -87,46 +52,101 @@ class QueryProcessor:
             movie.staff = hit['_source']['staff']
             movie.poster_url = hit['_source']['posterImage']
             movie.ott_provider = hit['_source']['streaming_provider']
-
-            if len(result) >= 10:
-                break
+            movie.movie_id = str(hit['_source']['tmdb_id'])
 
             result.append(movie)
 
         return result
 
-    def process_search_page(self, item):
-        filter = []
+    @staticmethod
+    def extract_ott_list(item):
+        ott_list = []
 
         if item.netflix_selected is True:
-            filter.append("넷플릭스")
+            ott_list.append("넷플릭스")
         if item.tving_selected is True:
-            filter.append("티빙")
+            ott_list.append("티빙")
         if item.coupang_selected is True:
-            filter.append("쿠팡플레이")
+            ott_list.append("쿠팡플레이")
         if item.watcha_selected is True:
-            filter.append("왓챠")
+            ott_list.append("왓챠")
         if item.wavve_selected is True:
-            filter.append("웨이브")
+            ott_list.append("웨이브")
+        if item.disney_selected is True:
+            ott_list.append("디즈니+")
 
-        query = self.create_search_page_query(item.searchString, filter)
-        response = self.search_movie("movies", query)
-        return self.process_response(response)
+        return ott_list
 
-    def process_main_page(self, item):
-        filter = []
+    def search_item(self, index, query):
+        response = self.opensearch_client.search(index=index, body=query)
+        return response
 
-        if item.netflix_selected is True:
-            filter.append("넷플릭스")
-        if item.tving_selected is True:
-            filter.append("티빙")
-        if item.coupang_selected is True:
-            filter.append("쿠팡플레이")
-        if item.watcha_selected is True:
-            filter.append("왓챠")
-        if item.wavve_selected is True:
-            filter.append("웨이브")
+    def push_item(self, index, document):
+        response = self.opensearch_client.index(index=index, id=document['id'], body=document['body'])
+        return response
 
-        query = self.create_main_page_query(item.genre, filter)
-        response = self.search_movie("movies", query)
-        return self.process_response(response)
+    def process_search_page(self, item, recommendation_system):
+        genre_list = []
+        ott_list = self.extract_ott_list(item)
+
+        md = recommendation_system.recommend_search(item.searchString, ott_list, genre_list)
+
+        return_list = []
+        for elem in md.itertuples():
+            query = self.create_id_query(elem.tmdb_id)
+            response = self.search_item("movies", query)
+            return_list += self.process_response(response)
+
+        return return_list
+
+    def process_main_page_genre(self, item, recommendation_system):
+        genre_list = [item.genre]
+        ott_list = self.extract_ott_list(item)
+
+        md = recommendation_system.recommend_simple(ott_list, genre_list)
+
+        return_list = []
+        for elem in md.itertuples():
+            query = self.create_id_query(elem.tmdb_id)
+            response = self.search_item("movies", query)
+            return_list += self.process_response(response)
+
+        return return_list
+
+    def process_main_page_personal_recommendation(self, item, recommendation_system):
+        ott_list = self.extract_ott_list(item)
+
+        md = recommendation_system.recommend_hybrid_one(user_id=item.user_id, title="범죄도시", ott_list=ott_list)
+        return_list = []
+        for elem in md.itertuples():
+            query = self.create_id_query(elem.tmdb_id)
+            response = self.search_item("movies", query)
+            return_list += self.process_response(response)
+
+        return return_list
+
+    def process_main_page_integrated(self, item, recommendation_system):
+        genre_list = []
+        ott_list = self.extract_ott_list(item)
+
+        md = recommendation_system.recommend_simple(ott_list, genre_list)
+        return_list = []
+        for elem in md.itertuples():
+            query = self.create_id_query(elem.tmdb_id)
+            response = self.search_item("movies", query)
+            return_list += self.process_response(response)
+
+        return return_list
+
+    def process_submit(self, item):
+        document = {}
+        user_id = 'wm_' + item.user_id
+        time = str(item.timestamp)
+        document['id'] = user_id + '_' + time
+        document['body'] = {
+            "user_id": user_id,
+            "movie_id": item.movie_id,
+            "timestamp": time
+        }
+
+        return self.push_item('user_rating', document)
