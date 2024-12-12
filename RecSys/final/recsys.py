@@ -5,8 +5,28 @@ import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+from surprise import Dataset, Reader
+
 from itertools import combinations
 import os
+
+def weighted_rating(x, C, m, current_year=2024, alpha=1.5):
+    """
+    - x: 데이터프레임의 개별 행
+    - C: 전체 영화의 평균 평점
+    - m: 평점 계산에 포함될 최소 투표 수
+    - current_year: 현재 연도
+    - alpha: 시간 가중치 조정 파라미터 (0.0 ~ 1.0, 기본값 0.5)
+    """
+    v = x['vote_count']
+    R = x['vote_average']
+    year = int(x['openYear'])
+    
+    # 연도 기반 가중치 계산 (최근일수록 가중치 높음)
+    time_weight = 1 + alpha * (1 - ((current_year - year) / 100))  # 100년 기준
+    
+    # 가중 평점 계산
+    return time_weight * ((v / (v + m) * R) + (m / (m + v) * C))
 
 
 class RecommendationSystem:
@@ -33,8 +53,10 @@ class RecommendationSystem:
         초기 load
         """
         # ToDo: load하는 주소들 변경
-        self.cosine_sim_metadata = np.load(
-            'final/data/cosine_sim_metadata.npy')
+        # 압축된 npz 파일에서 데이터 불러오기
+        data = np.load('final/data/cosine_sim_metadata.npz')
+        # 'cosine_sim_metadata'라는 키로 저장된 배열에 접근
+        self.cosine_sim_metadata = data['cosine_sim_metadata']
         # ToDo: load하는 주소들 변경
         with open('final/data/matIdx_to_tmdbId.pkl', 'rb') as f:
             self.matIdx_to_tmdbId = pickle.load(f)
@@ -60,11 +82,21 @@ class RecommendationSystem:
         every_ott_list = ['넷플릭스', '웨이브', '티빙', '디즈니+', '쿠팡플레이', '왓챠']
 
         # 모든 조합 생성
+        md_from_min_year = self.md_original.copy()
+        # 'openYear' 컬럼의 값을 정수로 변환
+        md_from_min_year['openYear'] = md_from_min_year['openYear'].fillna(0).astype(int)  # 또는 pd.to_numeric(md['openYear'], errors='coerce')
+        # 필터링 적용
+        min_year = 2022 # 예: 2000년 이후 작품만 포함
+        if 'openYear' in md_from_min_year.columns:
+            md_from_min_year = md_from_min_year[md_from_min_year['openYear'] >= min_year]
+        else:
+            raise ValueError("Dataset must include a 'release_year' column to filter by year.")
+        
         for r in range(1, len(every_ott_list) + 1):  # r은 조합의 길이 (1개부터 전체까지)
             for combo in combinations(every_ott_list, r):
                 combo_list = list(combo)
                 combo_sorted = tuple(sorted(combo_list))
-                md = self.get_md_filtered_by_ott_list(self.md_original, combo_list)
+                md = self.get_md_filtered_by_ott_list(md_from_min_year, combo_list)
                 # self.md에 대해서 self.C, self.m 업데이트
                 vote_counts = md[md['vote_count'].notnull()]['vote_count'].astype('int')
                 vote_averages = md[md['vote_average'].notnull()]['vote_average'].astype('float')
@@ -77,16 +109,19 @@ class RecommendationSystem:
                 self.m[combo_sorted] = vote_counts.quantile(0.95)
                 m = self.m[combo_sorted]
                 C = self.C[combo_sorted]
-                def weighted_rating(x):
-                    v = x['vote_count']
-                    R = x['vote_average']
-                    return (v/(v+m) * R) + (m/(m+v) * C)
                 
                 # 평가 수가 상위 5%인 데이터 추출
                 md = md[(md['vote_count'] >= m) & (md['vote_count'].notnull()) & (md['vote_average'].notnull())]
                 
+                # 추가 조건: 개봉 연도가 특정 기준 이후인 데이터만 포함
+                
+
                 # 가중치 점수 계산 → 'wr' 행에 넣기
-                md['wr'] = md.apply(weighted_rating, axis=1)
+                md['wr'] = md.apply(
+                    weighted_rating, 
+                    axis=1, 
+                    args=(C, m)  # 추가 인수들을 튜플로 전달
+                )
 
                 # Weighted Rating 기준으로 정렬
                 md = md.sort_values('wr', ascending=False)
@@ -156,38 +191,54 @@ class RecommendationSystem:
         if self.quailfied_md[ott_tuple] is not None:
             return self.quailfied_md[ott_tuple]
 
+        # OTT 리스트에 따라 필터링된 데이터 가져오기
         md = self.get_md_filtered_by_ott_list(self.md_original, ott_list)
         
-        
+        # 최소 투표 수와 평균 평점 계산
         m = self.m[ott_tuple]
         C = self.C[ott_tuple]
-
-        def weighted_rating(x):
-            v = x['vote_count']
-            R = x['vote_average']
-            return (v/(v+m) * R) + (m/(m+v) * C)
         
-        # 평가 수가 상위 5%인 데이터 추출
+        # 조건: 최소 투표 수, 유효한 평균 평점
         md = md[(md['vote_count'] >= m) & (md['vote_count'].notnull()) & (md['vote_average'].notnull())]
         
-        # 가중치 점수 계산 → 'wr' 행에 넣기
-        md['wr'] = md.apply(weighted_rating, axis=1)
+        # 추가 조건: 개봉 연도가 특정 기준 이후인 데이터만 포함
+        min_year = 2022  # 예: 2000년 이후 작품만 포함
+        if 'release_year' in md.columns:
+            md = md[md['release_year'] >= min_year]
+        else:
+            raise ValueError("Dataset must include a 'release_year' column to filter by year.")
+        
+        # 가중치 점수 계산 → 'wr' 열 생성
+        md['wr'] = md.apply(
+            weighted_rating, 
+            axis=1, 
+            args=(C, m)  # 추가 인수들을 튜플로 전달
+        )
 
         # Weighted Rating 기준으로 정렬
         md = md.sort_values('wr', ascending=False)
 
+        # 결과 저장
         self.quailfied_md[ott_tuple] = md
 
         return md
-    
+
     def update_ratings_and_svd(self, new_ratings):
         """
         새로운 rating이 들어왔을 때, 해당 평점을 바탕으로 rating을 업데이트 시켜주고 svd를 다시 업데이트 시켜준다.
 
         new_ratings : 새로운 rating 데이터프레임 (userId, movieId, rating, timestamp)
         """
+        new_ratings = pd.DataFrame(
+            new_ratings,
+            columns=["userId", "movieId", "rating", "timestamp"]
+        )
+
         # 기존 ratings와 새로운 ratings를 합침
         combined_ratings = pd.concat([self.ratings, new_ratings], ignore_index=True)
+
+        combined_ratings['movieId'] = combined_ratings['movieId'].astype('int')
+        combined_ratings['timestamp'] = combined_ratings['timestamp'].astype('int')
 
         # 중복된 userId와 movieId에서 timestamp가 가장 큰 값만 유지
         combined_ratings = combined_ratings.loc[
@@ -198,14 +249,21 @@ class RecommendationSystem:
         self.ratings = combined_ratings
 
         # ratings 파일 업데이트
-        # ToDo: 저장하는 주소들 변경
         self.ratings.to_csv("final/data/ratings.csv", index=False)
 
-        # SVD 재학습
-        self.svd.fit(self.ratings[['userId', 'movieId']], self.ratings['rating'])
+        # Surprise 라이브러리의 Reader 객체 생성
+        reader = Reader(rating_scale=(1, 5))  # rating scale에 맞게 조정 (1부터 5까지로 가정)
 
-        # SVD 파일 업데이트
-        # ToDo: 저장하는 주소들 변경
+        # Surprise Dataset 형식으로 변환
+        data = Dataset.load_from_df(self.ratings[['userId', 'movieId', 'rating']], reader)
+
+        # 전체 데이터로 훈련 세트 생성
+        trainset = data.build_full_trainset()
+
+        # SVD 재학습
+        self.svd.fit(trainset)
+
+        # SVD 모델 파일 업데이트
         with open('final/data/svd_model.pkl', 'wb') as f:
             pickle.dump(self.svd, f)
 
@@ -256,9 +314,29 @@ class RecommendationSystem:
         related_docs_indices = cosine_similarities.argsort()[::-1]
 
         # 상위 N개의 결과를 반환
-        top_results = md.iloc[related_docs_indices[:top_n]]
+        top_results = md.iloc[related_docs_indices[:3*top_n]]
 
-        return top_results # ['tmdb_id'] <- id만 반환 하고 싶으면 이걸 이어붙이면 됨
+
+        vote_counts = top_results[top_results['vote_count'].notnull()]['vote_count'].astype('int')
+        vote_averages = top_results[top_results['vote_average'].notnull()]['vote_average'].astype('float')
+
+        C = vote_averages.mean()
+        vote_counts.sort_values(ascending=False)
+        m = vote_counts.quantile(0.95)
+
+        # top_results = top_results[(top_results['vote_count'] >= m) & (top_results['vote_count'].notnull()) & (top_results['vote_average'].notnull())]
+        # top_results['vote_count'] = top_results['vote_count'].astype('int')
+        # top_results['vote_average'] = top_results['vote_average'].astype('float')
+
+        def weighted_rating_search(x):
+            v = x['vote_count']
+            R = x['vote_average']
+            return (v/(v+m) * R) + (m/(m+v) * C)
+        top_results['wr'] = top_results.apply(weighted_rating_search, axis=1)
+
+        top_results = top_results.sort_values('wr', ascending=False)
+
+        return top_results[:top_n] # ['tmdb_id'] <- id만 반환 하고 싶으면 이걸 이어붙이면 됨
     
     def recommend_hybrid_one(self, user_id, tmdb_id, ott_list):
         """
@@ -292,8 +370,8 @@ class RecommendationSystem:
         sim_scores = sorted(sim_scores_filtered, key=lambda x: x[1], reverse=True)
 
         # 상위 25개 영화 선택 (자기 자신 제외)
-        sim_scores = sim_scores[1:26]
-        movie_indices = [str(self.matIdx_to_tmdbId[i[0]]) for i in sim_scores]
+        sim_scores = sim_scores[1:25]
+        movie_indices = [self.matIdx_to_tmdbId[i[0]] for i in sim_scores]
 
         movies = md.loc[movie_indices]
 
@@ -315,6 +393,7 @@ class RecommendationSystem:
 
         input: user_id, tmdb_ids (리스트), ott_list
         """
+        # self.update_ratings_and_svd([])
         if len(tmdb_ids) == 0:
             return self.get_qualified_md(ott_list=ott_list)
 
@@ -323,23 +402,28 @@ class RecommendationSystem:
         md = self.get_md_filtered_by_ott_list(self.md_original, ott_list)
 
         
-
-        # 여러 tmdb_id에 대해 유사도 계산 후 합산
+        # 여러 tmdb_id에 대해 유사도 계산 후 합산 (가중치 적용)
         combined_sim_scores = {}
 
-        for tmdb_id in tmdb_ids:
+        # tmdb_ids의 길이 가져오기
+        n = len(tmdb_ids)
+
+        for index, tmdb_id in enumerate(tmdb_ids):
             # tmdb_id를 통해 인덱스 가져오기
             idx = self.tmdbId_to_matIdx[tmdb_id]
 
             # 영화 설명 유사도 (TF-IDF)와 메타데이터 유사도 (감독, 배우, 장르) 가져오기
             sim_scores = list(enumerate(self.cosine_sim_metadata[int(idx)]))
 
-            # 유사도를 합산
+            # 현재 tmdb_id의 가중치 계산 (뒤에 올수록 큰 값)
+            weight = (index + 1) / n  # ex) 첫 번째: 1/n, 두 번째: 2/n, ..., 마지막: n/n = 1
+
+            # 유사도를 합산 (가중치 적용)
             for i, score in sim_scores:
                 if i not in combined_sim_scores:
-                    combined_sim_scores[i] = score
+                    combined_sim_scores[i] = score * weight
                 else:
-                    combined_sim_scores[i] += score
+                    combined_sim_scores[i] += score * weight
 
         # 유효한 인덱스 찾기 (md에 있는 tmdb_id만)
         valid_indices = []
@@ -353,8 +437,8 @@ class RecommendationSystem:
         sorted_sim_scores = sorted(sim_scores_filtered, key=lambda x: x[1], reverse=True)
 
         # 상위 25개 영화 선택 (자기 자신 제외)
-        sorted_sim_scores = sorted_sim_scores[1:26]
-        movie_indices = [str(self.matIdx_to_tmdbId[i[0]]) for i in sorted_sim_scores]
+        sorted_sim_scores = sorted_sim_scores[0:35]
+        movie_indices = [self.matIdx_to_tmdbId[i[0]] for i in sorted_sim_scores]
 
         # 영화 데이터에서 인덱스를 사용하여 영화 선택
         movies = md.loc[movie_indices]
@@ -370,51 +454,15 @@ class RecommendationSystem:
         movies = movies.sort_values('est', ascending=False)
 
         return movies[:10]
-    
 
 
 
-# # 인스턴스 생성
-# rec_sys = RecommendationSystem()
+# 인스턴스 생성
+rec_sys = RecommendationSystem()
 
-# # 데이터를 로드
-# try:
-#     rec_sys.load()
-# except FileNotFoundError:
-#     print("필요한 데이터 파일이 없습니다. 샘플 데이터를 사용하세요.")
+# 데이터를 로드
+try:
+    rec_sys.load()
+except FileNotFoundError:
+    print("필요한 데이터 파일이 없습니다. 샘플 데이터를 사용하세요.")
 
-
-# ott_list = ['넷플릭스', '티빙', '웨이브', '디즈니+', '왓챠']
-# genre_list = []
-
-# result = rec_sys.recommend_simple(ott_list=ott_list, genre_list=genre_list)
-# print(result[['titleKr', 'vote_average', 'vote_count']])
-
-# OTT 플랫폼 리스트
-# every_ott_list = ['넷플릭스', '웨이브', '티빙', '디즈니+', '쿠팡플레이', '왓챠']
-# # 모든 조합 생성
-# for r in range(1, len(every_ott_list) + 1):  # r은 조합의 길이 (1개부터 전체까지)
-#     for combo in combinations(every_ott_list, r):
-#         combo_list = list(combo)
-#         result = rec_sys.recommend_simple(ott_list=combo_list, genre_list=genre_list)
-#         print(result[['titleKr', 'vote_average', 'vote_count']])
-
-
-# query = "과속스캔들"
-# result = rec_sys.recommend_search(query=query, ott_list=every_ott_list, genre_list=genre_list)
-# print(result[['titleKr', 'actor', 'vote_average', 'vote_count',  'genres']])
-
-# for r in range(1, len(every_ott_list) + 1):  # r은 조합의 길이 (1개부터 전체까지)
-#     for combo in combinations(every_ott_list, r):
-#         combo_list = list(combo)
-#         query = "과속스캔들"
-#         result = rec_sys.recommend_search(query=query, ott_list=combo_list, genre_list=genre_list)
-#         print(result[['titleKr', 'actor', 'vote_average', 'vote_count',  'genres']])
-    
-# title = "범죄도시 2" #, "범죄도시 2"]
-# result = rec_sys.recommend_hybrid_one(user_id="se1", tmdb_id=619803, ott_list=ott_list)
-# print(result[['titleKr', 'vote_average', 'vote_count',  'genres', 'streaming_provider']])
-# print("---------------------------------------------------------")
-# title = []
-# result = rec_sys.recommend_hybrid_multiple(user_id="se1", tmdb_ids=title, ott_list=ott_list)
-# print(result[['titleKr', 'vote_average', 'vote_count',  'genres', 'streaming_provider']])
