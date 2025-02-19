@@ -1,27 +1,29 @@
-# 프로젝트 개요
+# **프로젝트 개요**
 
 ## 프로젝트명
 **Watch Me**
 
 ## 슬로건
-모든 OTT 콘텐츠를 한 손에!
+**모든 OTT 콘텐츠를 한 손에!**
 
 ## 프로젝트 주제
-깔끔하고 편리한 UI와 완전한 OTT 플랫폼의 통합으로 인한 편리성. 그리고 플랫폼을 뛰어넘어 유저의 시청 기록 및 평가를 통한 학습된 강력한 개인 추천 시스템을 지원하는 어플리케이션.
+깔끔하고 편리한 UI와 완전한 OTT 플랫폼의 통합으로 인한 편리성.  
+그리고 플랫폼을 뛰어넘어 유저의 시청 기록 및 평가를 통한 학습된 강력한 개인 추천 시스템을 지원하는 어플리케이션.
+
+<br>
 
 ## 프로토타입 및 결과물 미리보기
 (좌) 프로토타입 / (우) 결과물 메인페이지  
-![프로토타입](/README_IMG/프로토타입.png)
+![프로토타입](https://private-user-images.githubusercontent.com/63998352/414788426-b3a9e4a1-a672-4c21-868e-bf0de11420bb.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODA1ODQsIm5iZiI6MTczOTk4MDI4NCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjYtYjNhOWU0YTEtYTY3Mi00YzIxLTg2OGUtYmYwZGUxMTQyMGJiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTEyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTZmZTE4ZGViZDUxNGZiM2NhN2UxNDc3MmYyNTVhYzdkNDY1YmJmYzhjZDU4NTViZWI1YzE4M2VjZGE0MmI3ZWQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.niqrM9aEBK5MdP3_9tJc5d_-wswsenwIQEoTYMXlxC4)
 
----
+<br>
 
-# 팀 소개
+# **팀 소개**
 
 ## 팀명
 **Watch Me**
 
 ## 팀원
-
 | 학번 | 이름 | 역할 |
 |------|------|------|
 | 201915** | **김*수** | 팀장, Recommender System |
@@ -30,151 +32,133 @@
 | 201917** | **이*형** | Back-End |
 
 ## 지도교수 및 멘토
-
 | 역할 | 이름 | 소속 |
 |------|------|------|
 | 지도교수 | **정영민 교수님** | 서강대학교 |
 | 멘토 | **임*환** | NAVER |
 
+<br>
+
 ## 협업 방법
-- **Github**: 프로젝트 버전 관리
-- **Discord, 카카오톡**: 비대면 커뮤니케이션
-- **Notion**: 프로젝트 일정 및 회의, 멘토링 기록
-- **Flutter Flow**: 어플리케이션 프로토타입 설계
+- **Github** : 프로젝트 버전 관리  
+- **Discord, 카카오톡** : 비대면 커뮤니케이션  
+- **Notion** : 프로젝트 일정 및 회의, 멘토링 기록  
+- **Flutter Flow** : 어플리케이션 프로토타입 설계  
 
-**Github를 통한 프로젝트 버전 관리**  
-![Github 화면](/README_IMG/깃허브화면.png)
+<br>
 
-**Notion을 통한 작업 현황 및 일정 관리**  
-![Notion 화면](/README_IMG/노션화면.png)
+- **Github를 통한 프로젝트 버전 관리**  
+  ![깃허브화면](https://private-user-images.githubusercontent.com/63998352/414788428-91dd56c5-d285-4ef5-a898-1dadd4b40912.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODA1ODQsIm5iZiI6MTczOTk4MDI4NCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjgtOTFkZDU2YzUtZDI4NS00ZWY1LWE4OTgtMWRhZGQ0YjQwOTEyLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTEyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWM0ZGVhMDA0MDFjMzU5YzgzYmQxZGM2NDU1MzcxZmZiOTdjMzlmNjFiMGVjMjVlOTlkNzg1NTFiYjM1Y2YxYTEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Dd4385GQgNajaZtJNZc6XV8nXJDG-xoCsDgr2g-9MXw)
 
----
+- **Notion을 통한 작업 현황 및 일정 관리**  
+  ![노션화면](https://private-user-images.githubusercontent.com/63998352/414788419-773421e8-88e4-47f4-8122-278a4bde5c97.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODA1ODQsIm5iZiI6MTczOTk4MDI4NCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MTktNzczNDIxZTgtODhlNC00N2Y0LTgxMjItMjc4YTRiZGU1Yzk3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTEyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTg1Mzk3MTE5NDkyY2Y3NTRkMGFjMDkxN2NiMzA0MDkxOWMyNzY0Yjg1NGYzN2I1ZTlhYmU5ZjFiZjA4OTM2YmEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.3oJEvvvjwSWtNusnr8v8-L6BHu5XkSc8OwgCilOutSI)
 
-# 프로젝트 소개
+<br>
+
+# **프로젝트 소개**
 
 ## 프로젝트 목적
-1. **편리하고 쉬운 UI**: 앱에 익숙하지 않은 사용자도 쉽게 접근할 수 있는 UI 설계.
-2. **플랫폼 통합화**: 다양한 OTT 플랫폼을 한 번에 검색하고 즐길 수 있음.
-3. **강력한 추천 시스템**: 플랫폼별 시청 기록을 기반으로 맞춤 콘텐츠 추천.
+1. **편리하고 쉬운 UI**: 좋은 UI란, 앱에 익숙치 않은 사용자도 빠르고 쉽게 접근할 수 있어야 한다.
+2. **플랫폼의 통합화**: 다양한 OTT 플랫폼을 통합하여, 한 번에 콘텐츠를 검색하고 즐길 수 있다.
+3. **강력한 추천 시스템**: 하나의 OTT 플랫폼에 국한되지 않고, 각 플랫폼에서의 시청 기록을 기반으로 유저에게 알맞은 콘텐츠를 추천 받을 수 있다.
 
 ## 문제 인식
-- 다양한 OTT 플랫폼이 등장하면서 콘텐츠 추천의 중요성이 증가.
-- 사용자가 원하는 콘텐츠를 쉽게 찾지 못하는 문제 발생.
+- 시중에 다양한 OTT 플랫폼이 등장하고 있다.
+- 그에 따라 콘텐츠의 양이 방대해지고, 사람들의 콘텐츠 추천에 대한 수요가 증가하였다.
 
 ## 해결 방안
-- 시청 기록 DB와 추천 시스템을 활용한 플랫폼 통합 어플리케이션 개발.
+시청 기록 DB와 추천 시스템을 활용한 플랫폼 통합 어플리케이션 개발.
 
 ## 기대 효과
-- 완전한 플랫폼 통합을 통한 편리성 증대.
+완전한 플랫폼의 통합으로 인한 편리성 증대.
 
----
+<br>
 
-# 프로젝트 구조
+# **프로젝트 구조**
 
 ## 프로젝트 전체 구조
-![프로젝트 구조](/README_IMG/프로젝트구조.png)
+![프로젝트구조](https://private-user-images.githubusercontent.com/63998352/414788427-cbb470c8-2c7c-4d3e-acf1-c2d79f3e22e0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODA1ODQsIm5iZiI6MTczOTk4MDI4NCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjctY2JiNDcwYzgtMmM3Yy00ZDNlLWFjZjEtYzJkNzlmM2UyMmUwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTEyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWM2M2U4Nzg1ZmMzNmM5YTU2NDFhMjg4N2RmYmQ2ZDBiNTZiNjA2NDJiNjBiNGJiZjg3N2E1M2RiMDdmNzI2NWYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.G4pfO0JkpkX4Wq54XbetcxOZ9hC-5oUnuzxUmEw-wV0)
 
 ## 추천 시스템 구조
-![추천 시스템 구조](/README_IMG/추천시스템구조.png)
+![추천시스템구조](https://private-user-images.githubusercontent.com/63998352/414788434-18f2afec-0c4c-46eb-a971-95d020893d8d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODA1ODQsIm5iZiI6MTczOTk4MDI4NCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MzQtMThmMmFmZWMtMGM0Yy00NmViLWE5NzEtOTVkMDIwODkzZDhkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTEyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTNjOWVkOWEwZjZmMWEwNWZlOGFjZjYzODEyNDA2NzA2ODQ0YTMzM2Y1OTM2MGFhN2JjZWI1Y2JlMTBiNWIzNmImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.2GEjf2DhhRxS6VGWPVhBIjZeDLBWeZwZ1v-r78WYggA)
 
----
+<br>
 
-# 프로젝트 내용
+# **프로젝트 내용**
 
 ## SW 구조 및 구성요소
 
-Watch Me 앱은 OTT 플랫폼을 통합하고 개인화된 추천 시스템을 운영하는 것이 목표입니다.
+Watch me 앱의 목표는 OTT 플랫폼을 통합하고, 이에 따른 개인화된 추천 시스템을 운영하는 것이다.  앱의 개발과정에서의 구성 요소는 크게 실제적인 사용자들에게 화면을 보여주고, 앱의 기능을 제공하는 프론트엔드 부분과, 요청에 따라 DB를 관리하고 통신하며, 추천 시스템과의 연결까지 고려하며 구현되는 백엔드, 그리고 백엔드에서 사용자들 각각에 대한 정보와 검색 쿼리에 따라 개인화된 추천을 제공하는 추천 시스템 부분 총 3가지로 나눌 수 있다.
 
-### 주요 구성 요소
-1. **프론트엔드**: 사용자 인터페이스(UI)와 UX 설계 (Flutter, Android Studio 사용)
-2. **백엔드**: DB 관리 및 프론트엔드와 통신 (FastAPI 사용)
-3. **추천 시스템**: 하이브리드 추천 적용 및 데이터 분석 (콘텐츠 기반 필터링 + 협업 필터링)
+앱의 개발을 시작하기에 앞서, 각각 SW 개발에 대한 구조를 어느 정도 파악하고 들어갔다. 백엔드는 추천 시스템과 DB 그리고 프론트엔드와의 연결에 대해서 어떤 식으로 통신할 것이고, 각각에 대해서 어떤 프레임워크로 작성할 지에 대해 구조를 신경 썼다. 프론트엔드는 flutter /android studio로 이용한 개발로 먼저 확정이 지어진 상태로 시작하였고, 어떤 기능들이 필요하고, 어떤 화면들이 실제 앱에서 구동되어야 하는지를 화면 전환도를 그려 미리 계획하였다. 앱의 프로토 타입은 flutter flow를 이용하여 만들기로 하였다. 추천 시스템은 하이브리드 추천을 적용시키기로 정했고, 관련 논문과 baseline 코드를 통해, 우리 앱에 알맞게 수정하여 구현기로 하였다.
 
-### 개발 초기 계획
-- **백엔드**: 추천 시스템과 DB 및 프론트엔드 연결 방식 설계
-- **프론트엔드**: 화면 전환도 설계 및 앱 UX 구성
-- **추천 시스템**: 기존 논문과 baseline 코드 기반으로 최적화
+아래는 개발 계획 단계에서의 백엔드와 프론트엔드의 전체적인 구상도이다.
 
-**앱 전체 구조도**  
-![앱 구조도](/README_IMG/앱구조도.png)
+![앱 구조도](https://private-user-images.githubusercontent.com/63998352/414791119-7ded6071-e0b7-4c62-bd23-643fbd1ddfbc.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODA1ODQsIm5iZiI6MTczOTk4MDI4NCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3OTExMTktN2RlZDYwNzEtZTBiNy00YzYyLWJkMjMtNjQzZmJkMWRkZmJjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTEyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM4M2ZkMjY4ODVmODcwNjBkNjZlYzIxNjM5ZTc3YTIzMTc4MmE4NGU3YzJhYjA4MTVmOTZmN2NlMjI4OTYxOGUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.W2cpncwz6DQur42E62ybr8qFfZNUB3n4LOAkKJg829k)
 
-**프로젝트 구조도**  
-![프로젝트 구조](/README_IMG/프로젝트구조.png)
+![프로젝트구조](https://private-user-images.githubusercontent.com/63998352/414788427-cbb470c8-2c7c-4d3e-acf1-c2d79f3e22e0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODA1ODQsIm5iZiI6MTczOTk4MDI4NCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjctY2JiNDcwYzgtMmM3Yy00ZDNlLWFjZjEtYzJkNzlmM2UyMmUwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTEyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWM2M2U4Nzg1ZmMzNmM5YTU2NDFhMjg4N2RmYmQ2ZDBiNTZiNjA2NDJiNjBiNGJiZjg3N2E1M2RiMDdmNzI2NWYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.G4pfO0JkpkX4Wq54XbetcxOZ9hC-5oUnuzxUmEw-wV0)
 
-## 주요 설계 고려사항 및 개발 항목
+## 설계 주요 고려사항 및 개발항목
 
-1. **OTT 데이터 수집**: API 활용 (TMDB, 키노라이츠 등)
-2. **추천 시스템 구축**: 자연어 처리(NLP) 및 협업 필터링 적용
-3. **검색 시스템 구현**: 키워드 검색 및 유사도 기반 검색 기능
-4. **OTT 필터링 기능**: 사용자가 원하는 OTT 플랫폼 선택 가능
-5. **유저 리뷰 및 평가 기능**: 평점 및 한줄평 남기기 기능 추가
+Watch me 앱의 주요 기능은 크게 2가지로 나눌 수 있다. OTT 플랫폼들의 통합과 함께 통합된 콘텐츠 데이터를 이용한 개인 맞춤 추천이 주요한 기능이다. 이러한 기능들을 구현하기 위해서는 우선적으로 영화와 OTT 플랫폼들에 대한 정보를 수집해야 했다. 개발 전에 각 OTT 플랫폼들은 관련된 API를 따로 제공하지 않는 것으로  확인했었기 때문에, 전체적인 데이터를 수집할 수 있는 방법을 고민하게 되었다. 우리가 필요한 주요한 정보는 다음과 같은 것들이 있었다. OTT 플랫폼들을 통합하기 위해서 우선적으로 어떠한 영화에 대해서, 그 영화를 시청할 수 있는 OTT들을 찾아야 했다. 또한 영화를 모바일 애플리케이션 화면에 표시하기 위해서는, 그 영화에 대한 여러 정보가 필요하다. 예를 들면, 영화의 제목, 포스터 이미지, 감독과 배우등이 필요하였다. 처음에 개발에 들어가기에 앞서서는 데이터 스크래핑을 통하여 정보를 얻은 후 DB에 순차적으로 저장하고, 백엔드 서버에서 특정 주기마다 데이터 스크래핑을 통해 데이터를 갱신하는 방식을 취하려 했었다. 개발을 이어나가게 되면서 tmdb와 키노라이츠등의 api를 활용하여 데이터를 수집하는 방식으로 전환하였다. 아래는 API 호출하여 데이터를 확보하는 실제 화면이다.
 
-### OTT 필터링
-사용자가 원하는 OTT 플랫폼을 선택하여 콘텐츠를 필터링 가능  
-![OTT 필터링](/README_IMG/메인필터링.png)
+![줄거리 토큰1](https://private-user-images.githubusercontent.com/63998352/414791653-129c38a7-315e-4a40-8f51-8b21d61dad17.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODA1ODQsIm5iZiI6MTczOTk4MDI4NCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3OTE2NTMtMTI5YzM4YTctMzE1ZS00YTQwLThmNTEtOGIyMWQ2MWRhZDE3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTEyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWQ0ZTEyZTBjOTllMTg2Nzg3MGE4NDI5ZTNlOTVkYWRmNGJhNWFjY2UwMTFhYTA4NzY1OTczMmM2MmQyNDhhMTAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.0pAL_Ls3SuVZa35YdjlXDLoIXJdF2WBOlKGNBSlsFwk)
 
-### 키워드 검색 기능
-키워드 검색 시 감독, 배우 정보를 반영하여 콘텐츠 추천  
-![키워드 검색](/README_IMG/키워드검색.png)
+이렇게 얻게 된 영화에 관련된 데이터는 크게 두가지 부분에서 사용된다. 우선 백엔드에서 db에 관련된 데이터를 json 형식으로 저장하고 있다. 프로트엔드에서는 영화의 포스터 이미지와 함께 실제로 화면에 표시해야 한다. 이를 위하여 fastapi를 사용하여 http api로 백엔드와 소통하여 정보를 주고받고, 실제 화면에 표시한다. 추천 시스템에서도 이러한 데이터들을 활용한다. 각 영화의 줄거리를 자연어 처리를 통해 정제한 후, 유사도를 파악함으로써 하이브리드 된 추천 시스템에서 콘텐츠 기반 추천 부분의 기반이 된다. 또한 이러한 자연어 처리를 통해 유사도를 분석함으로써, 각 영화와 비슷한 영화에 대한 학습이 진행될 수 있었다.  tmdb api에서는 각 영화를 별점을 매긴 사람 수와 함께 평균 별점이 제공된다. 우리 앱에서는 개인별 추천 시스템과 동시에 일반적인 추천도 적용하는데 이에 활용되었다.  아래는 관련 화면이다.
 
-### 개인 맞춤 추천
-사용자 평점 및 리뷰를 반영한 추천 시스템  
-![추천 시스템](/README_IMG/추천시스템.png)
+![줄거리 토큰2](https://private-user-images.githubusercontent.com/63998352/414788425-671be1f7-b314-4172-a83d-4e679524b62d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODEwNjMsIm5iZiI6MTczOTk4MDc2MywicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjUtNjcxYmUxZjctYjMxNC00MTcyLWE4M2QtNGU2Nzk1MjRiNjJkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTkyM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWMyZTg5NzY0ODA2ODQzOTYxM2EwODYzYWYxMzFhMzNiZjA4ZmY4YjRmOTE2ODljOTU1ZTc2N2QzOTZiYWQ4ZmUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.4Hx2cD5C6Qd7utIPbBEBgF_okdD9Eex-SP4zs8vBABI)
 
----
+이러한 줄거리에 대한 것들은 검색 시스템에도 포함되어 키워드를 포함한 검색 또한 가능하게 하였다. 아래는 배우와 장르를 검색시스템에 활용하여 올바른 결과가 검색된 화면이다.
 
-# 프로젝트 결과물
+![키워드검색](https://private-user-images.githubusercontent.com/63998352/414788424-2385c7e8-dbf3-4583-93ee-0863eac473ff.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODEwNjMsIm5iZiI6MTczOTk4MDc2MywicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjQtMjM4NWM3ZTgtZGJmMy00NTgzLTkzZWUtMDg2M2VhYzQ3M2ZmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTkyM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTJmMDJkNjVhNGFmNGU1YmEwZGZiZDBjNjFhMjFhMDhkZjg2NTMxZGVlMWNjZjc4ZmI5N2MzY2I4ODU4MzZkNGYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.MwIiWgJjmjdAAL0LXCUeLLA14L8Ws8gMYNqn9t5WjXw)
+
+OTT를 토글링하는 방식으로 OTT들에 대한 필터링을 진행하였다. 이에 총 6가지 플랫폼들에 대해서 원하는 플랫폼만에 대한 추천과 메인화면이 구성되게 된다. 이러한 각 OTT들에 대한 선택 정보는 프론트엔드와 백엔드간의 정보를 주고받으면서, 사용자의 토글링 상태를 프론트엔드가 백엔드에 관련 요청을 보냄으로써 백엔드에서는 각 OTT들에 대한 선택 상태를 고려해 메인 화면에 구성될 영화들을 넘기게 된다.  
+
+이러한 각 OTT들에 대한 선택 상태를 메인 화면에서 관리하고자 결정했다. 앱은 프론트엔드 상에서 크게 5가지 화면으로 구성된다. 로그인 페이지, 메인 페이지, 상세 페이지, 마이 페이지, 검색 페이지로 구성된다. 첫 설계에서는 추천 페이지도 포함되었으나, 후에 메인 화면에 추천 영화를 함께 포함하는 방식으로 화면 구현을 변경했다. 나머지 전체적인 화면 전환의 구성 흐름은 설계했던 것과 동일하게 적용하였다. 상세 페이지에서는 그 영화를 시청할 수 있는 OTT 플랫폼들을 나열하여 보여주었고, 각 OTT를 누르면 내 모바일 환경에서 그 OTT 플랫폼의 링크로 직접 이동되도록 구현하였다.
+
+![보러가기](https://private-user-images.githubusercontent.com/63998352/414800375-9e260d77-8cca-4721-91b9-a8e4e3a99aa7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODExNDMsIm5iZiI6MTczOTk4MDg0MywicGF0aCI6Ii82Mzk5ODM1Mi80MTQ4MDAzNzUtOWUyNjBkNzctOGNjYS00NzIxLTkxYjktYThlNGUzYTk5YWE3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDA0M1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTE0OGFhMTAyZDI3ZDQwODM4NzJhZTgzOTgyNWFjZWQ0MGVkMmRlMWYzYjkzYzEwNzgzNGM1NmQwZDAyYzQ4OTYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.rdhk1RBJL4jeEBsDsxTtB3fEh3a0WSvux8Rs58AHH6A)
+
+상세 페이지에서는 평가 버튼을 누르면 영화에 대한 별점과 코멘트를 남길 수 있는데, 이는 백엔드 서버에 연결되어 추천 시스템과 적용된다. 각 유저가 어떠한 영화에 대해 남긴 별점을 분석하여 개인화된 추천 시스템이 업데이트 된다.
+
+![평가남기기](https://private-user-images.githubusercontent.com/63998352/414800405-3b66e391-110d-4d11-bcd7-d81e8ae25797.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODExNDMsIm5iZiI6MTczOTk4MDg0MywicGF0aCI6Ii82Mzk5ODM1Mi80MTQ4MDA0MDUtM2I2NmUzOTEtMTEwZC00ZDExLWJjZDctZDgxZThhZTI1Nzk3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDA0M1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWQ0NTg1OWRmOGQ4NDQ2ZTAzYzRlYmRhYjFhZTlmMjAwYmY2NDIxMWZjM2U0ODY3YzNmYTg4MzBiM2QzNmNiNzYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.oqQdEc49m0ey8AHus2ZEOW1QsLQBBinPBCjFS9NZFdU)
+
+아래는 특정 유저의 별점과 평가에 따라서 각 유저의 추천되는 콘텐츠들이 실제로 어떻게 달라졌는지를 보여주는 화면이다. 위 화면은, 배우 박보영의 로맨스/드라마 영화에 대해서 높은 별점을 준 유저의 추천 영화 항목이고 아래는 배우 마동석의 액션 영화에 대해 높은 별점을 준 유저의 추천 영화 항목이다.
+
+![박보영추천](https://private-user-images.githubusercontent.com/63998352/414800696-ffa930f7-3065-4f6f-81be-c20d92e0e10a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODExODgsIm5iZiI6MTczOTk4MDg4OCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ4MDA2OTYtZmZhOTMwZjctMzA2NS00ZjZmLTgxYmUtYzIwZDkyZTBlMTBhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDEyOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZlZjY0MTFiNTAwMTc4ZDhiNzllNDVmNzdlODZiY2Q0MTU4ODA0NjQ4MDFlYTMyNjAwODQ1MTk4ZmFlNzE0ZjQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.g-NxPMk3yTjXoQ_vsSjiSQbWoa06J9eSd_P8kGK4V7A)
+
+![마동석추천](https://private-user-images.githubusercontent.com/63998352/414800710-e252e051-f109-4ade-bbf6-b59dd25e51a2.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODExODgsIm5iZiI6MTczOTk4MDg4OCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ4MDA3MTAtZTI1MmUwNTEtZjEwOS00YWRlLWJiZjYtYjU5ZGQyNWU1MWEyLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDEyOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTcxOWUzZjdkMGY3ZGRkMmJhZjQxODNjMzQxOGNlOTUzYTZkZWRlMzk0ZWRjMDg3MTQ3OWRiYmM5NDU3NzM4MTcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.EW1X4oVF-J-IeV7Xyiax5VkqQPGF6kr_9qcpYEy0A5M)
+
+이러한 내용들을 통합하여 watch-me 앱을 설계 및 구현 완료하였다.
+
+# **프로젝트 결과물**
 
 ## 최종 결과
-**왼쪽부터**: Main Page / Search Page / Detail Page  
-![결과물](/README_IMG/결과물.png)
+![결과물](https://private-user-images.githubusercontent.com/63998352/414788429-81f8786c-84ee-4633-ae18-d0c1b19183ca.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODExODgsIm5iZiI6MTczOTk4MDg4OCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjktODFmODc4NmMtODRlZS00NjMzLWFlMTgtZDBjMWIxOTE4M2NhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDEyOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTYzMjdhNmI4YTRkNWE1ZTI4MDA0NTEwMzZkODZmZGRlOWFhZTFjODU0MzEwM2IzNGY5ZTQ2MDgxYTQyMGVkMmImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.qrp0G5cs-apSVoWUudWkx_DWgjZ6FHCAG3yN4QqmXVc)
 
-## OTT 필터링 기능
-- 특정 OTT 플랫폼만 필터링하여 원하는 콘텐츠 탐색 가능
+## 향후 개선 방안 및 보완 사항
 
-## 키워드 검색 기능
-- 키워드를 입력하면 가장 유사한 콘텐츠를 추천
-- CountVectorizer와 코사인 유사도를 활용하여 검색 정교화
+### 서버 스펙 이슈로 인한 보완사항
+현재 가용 가능한 서버 스펙 상 너무 많은 작품과 많은 데이터를 감당할 수 없어서 현재 영화에 대해서만 작품리스트 및 추천 기능을 제한한 상태이다.  
+추후에 서버 스펙을 업그레이드할 수 있다면 드라마, 예능 및 스포츠 더 나아가 웹 소설, 웹툰, 책 과 같은 콘텐츠들까지 범위를 확장하여 앱의 사용성을 증가시킬 수 있을 것이다.  
 
-## 개인별 추천 시스템
-- 유저의 평점과 리뷰를 반영한 맞춤 추천 기능
+### DB 변경을 통한 쿼리 속도 개선
+현재 영화 정보와 사용자 평가 정보를 보관하는 DB로 검색 엔진인 Elasticsearch를 선택하여 사용하고 있다. 그러나, 상세 구현을 진행한 결과 Elasticsearch로 query하기 전 추천 시스템 모델의 도움을 받아 줄거리나 키워드 검색을 Elasticsearch의 색인, 역색인 기능을 이용하여 진행하고 있지 않고, 작품의 ID만을 이용하여 쿼리하고 있는 상태이다.  
+즉, DB로써 Elasticsearch를 고집해야 하는 필요성이 옅어졌고, 이에 따라 읽기/쓰기 연산에 더욱 최적화된 key-value 기반의 NoSQL 저장소(ex. Amazon DynamoDB)와 같은 데이터베이스의 도입을 고려해볼 법하다. 
 
-## OTT 서비스와의 연동
-- 클릭 시 해당 OTT 플랫폼으로 바로 이동 가능  
-![OTT 연동](/README_IMG/연동.png)
+### 향후 계획
+현재는 단순히 평가 및 평점을 남기는 기능을 제공하고 있는데, 유저 본인이 본 시청 목록과 남긴 리뷰 및 평점에 대한 데이터를 유저가 쉽게 탐색 및 관리할 수 있도록 마이페이지 및 평점 부분의 기능을 개선시킬 계획이 있다.  
+또한 이를 SNS처럼 사람들이 남긴 평점 및 한줄평을 볼 수 있게 만들고 퀄리티가 높은 리뷰를 달아주는 유저들에게는 보상 및 Celebrity와 같이 만들어 평점을 유저들이 잘 남길 수 있는 재미와 동기를 부여하도록 할 계획이 있다.  
 
----
-
-# 향후 개선 방안 및 보완 사항
-
-## 서버 스펙 이슈 해결
-- 현재 서버 성능 제한으로 인해 영화 데이터에만 적용됨
-- 서버 업그레이드 후 드라마, 예능, 스포츠 콘텐츠까지 확장 계획
-
-## DB 변경을 통한 쿼리 속도 개선
-- Elasticsearch 사용 대신 NoSQL 저장소(Amazon DynamoDB) 도입 고려
-- Bulk Query 지원 DB를 도입하여 성능 개선 예정
-
-## 향후 계획
-- 유저가 본 시청 목록 및 리뷰를 쉽게 관리할 수 있도록 마이페이지 개선
-- SNS 기능 도입하여 유저 간 리뷰 공유 및 추천 기능 강화
-- OTT 구독 분석 및 추천 기능 추가
-- OTT 할인 정보 제공 및 수익성 향상 방안 연구
-- 숏폼 콘텐츠 추천 기능 추가 계획
-
----
-
-# 프로젝트 기록
+# **프로젝트 기록**
 
 ## 회의록 및 멘토링
 [회의록 및 멘토링 정리본](https://quill-bulb-27c.notion.site/38c60ef591524f6fa592374f2ba8ac09)
 
 ## 발표자료
-- [Watch Me 제안 발표](Watch-Me_제안_발표.pptx)
-- [Watch Me 중간 발표](Watch-Me_중간_발표.pptx)
-- [Watch Me 최종 발표 (구글 슬라이드)](https://docs.google.com/presentation/d/1NhUGDlvh8zAaRte0kignFLydAL6fmD3GBPKEaSO7A60/edit?usp=sharing)
+- 제안발표: [Watch-Me_제안_발표.pptx](파일:Watch-Me_제안_발표.pptx)  
+- 중간발표: [Watch-Me_중간_발표.pptx](파일:Watch-Me_중간_발표.pptx)  
+- 최종발표: [Watch-Me_최종_발표.pptx](파일:Watch-Me_최종_발표.pptx) / [Watch-Me 최종 발표(구글 슬라이드)](https://docs.google.com/presentation/d/1NhUGDlvh8zAaRte0kignFLydAL6fmD3GBPKEaSO7A60/edit?usp=sharing)
 
 ## 최종 보고서
-- [Watch Me 최종보고서 (PDF)](Watch_Me_최종보고서.pdf)
-- [Watch Me 최종보고서 (DOCX)](Watch_Me_최종보고서.docx)
-
+- [Watch_Me_최종보고서.docx](파일:Watch_Me_최종보고서.docx)  
+- [Watch_Me_최종보고서.pdf](파일:Watch_Me_최종보고서.pdf)
