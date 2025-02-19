@@ -130,10 +130,81 @@ OTT를 토글링하는 방식으로 OTT들에 대한 필터링을 진행하였�
 
 이러한 내용들을 통합하여 watch-me 앱을 설계 및 구현 완료하였다.
 
-# **프로젝트 결과물**
+# 프로젝트 결과물
+
+## 목차
+- 최종 결과
+- 메인 페이지 OTT 필터링
+- 검색 페이지 OTT 필터링
+- 키워드 검색 기능
+- 개인별 추천 시스템
+- OTT 서비스와의 연동
+
+<br>
 
 ## 최종 결과
 ![결과물](https://private-user-images.githubusercontent.com/63998352/414788429-81f8786c-84ee-4633-ae18-d0c1b19183ca.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODExODgsIm5iZiI6MTczOTk4MDg4OCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjktODFmODc4NmMtODRlZS00NjMzLWFlMTgtZDBjMWIxOTE4M2NhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDEyOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTYzMjdhNmI4YTRkNWE1ZTI4MDA0NTEwMzZkODZmZGRlOWFhZTFjODU0MzEwM2IzNGY5ZTQ2MDgxYTQyMGVkMmImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.qrp0G5cs-apSVoWUudWkx_DWgjZ6FHCAG3yN4QqmXVc)
+
+
+<br><br>
+
+## 메인 페이지 OTT 필터링
+![메인필터링](https://private-user-images.githubusercontent.com/63998352/414788435-e95e4f7b-f298-4481-8d71-d85a7559fd69.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODEzOTIsIm5iZiI6MTczOTk4MTA5MiwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MzUtZTk1ZTRmN2ItZjI5OC00NDgxLThkNzEtZDg1YTc1NTlmZDY5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDQ1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWFmNGFhN2I3NTA5ZTQxOTFhZGE2YTEyYjk5MWI2YWEyM2ZlNDhhZTNmMmUzMDc2NWI4M2NlM2RkNzdhMGRiM2YmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.T3qwnm9VZ6bCrphghffZ4A7_fnVlduHa6tIZ13RF_q8){:width="700px"}  
+
+**(좌) Netflix On, (우) Netflix Off**  
+서울의 봄, 오펜하이머의 경우 Netflix에만 있는 작품이다.  
+따라서 상단의 Netflix 버튼을 토글하여 Off하면 오른쪽 사진과 같이 Netflix에만 있는 작품들은 Display되지 않는다.  
+
+<br><br>
+
+## 검색 페이지 OTT 필터링
+![검색필터링](https://private-user-images.githubusercontent.com/63998352/414788438-8ae3cc0e-602a-4d77-9f07-f25aeaf541fe.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODEzOTIsIm5iZiI6MTczOTk4MTA5MiwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MzgtOGFlM2NjMGUtNjAyYS00ZDc3LTlmMDctZjI1YWVhZjU0MWZlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDQ1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY1MjdlYmE2YmVjYmYyYWQ0ZDQyNWM0NmU4YzEwMjg3YjFhZTRlNzYyM2VjOTc1NTAxODNjYjRhYzUzODE3ZTkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.D83vj3dxkotdDoncy1olTJOIX0M_GW0Cg90mH_z7o9U){:width="700px"}  
+
+**(좌) ALL On, (우) 티빙 & 디즈니+ Off**  
+마동석 배우 검색 결과이다.  
+범죄도시의 경우 티빙 혹은 디즈니+에만 존재하여서, 검색 후 Tving 또는 Disney+ 버튼을 토글링하여 Off한 경우, 범죄도시는 검색결과에서 사라지게 된다.  
+
+<br><br>
+
+## 키워드 검색 기능
+![키워드검색](https://private-user-images.githubusercontent.com/63998352/414788421-983675a0-70b2-4555-b437-92a3f818303c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODEzOTIsIm5iZiI6MTczOTk4MTA5MiwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjEtOTgzNjc1YTAtNzBiMi00NTU1LWI0MzctOTJhM2Y4MTgzMDNjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDQ1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWNiMjJjZDU1MzhmZjgxNzM4OTUzNmYyZWE3YmE4ZDUzMTcwYzQzNTNmNWUyNDRkMWQyYzVjYjYxY2Q1NTMwNTcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Nh5QPr22WonGF9oZnxfRkZezr91jIJ38ZwHAi78pjiA){:width="700px"}  
+
+**(좌) '황정민 모험' 검색 결과, (우) '이하늬 코미디' 검색 결과**  
+
+위 키워드 검색 기능의 경우 검색 쿼리가 들어왔을 때, CountVectorizer를 이용하여 문자를 유사도 행렬으로 변경하였다.  
+이때, 감독과 배우진의 중요도를 올리기 위해 Naive하게 감독 이름과 배우 이름을 여러 번 반복하여 CountVectorizer에서의 점수를 높이는 방식을 이용하였다.  
+해당 유사도 행렬을 이용하여 코사인 유사도를 적용시켜 검색 쿼리가 들어왔을 때, 가장 유사한 상위 몇 개의 작품을 골라내고 그 중에서 인기도 있는 작품 순으로 정렬하였다.  
+
+<br><br>
+
+## 개인별 추천 시스템
+![카카오로그인](https://private-user-images.githubusercontent.com/63998352/414788422-163dcdbf-f310-4ea7-b843-bd09d114140e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODEzOTIsIm5iZiI6MTczOTk4MTA5MiwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjItMTYzZGNkYmYtZjMxMC00ZWE3LWI4NDMtYmQwOWQxMTQxNDBlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDQ1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTFmMjMxZGI2OTk1ZmZmYzRlOGNlMzkzNTBjMGI1NjdjNjg4ZTkyNzZhNzNkNTA0OGU5OGY1YjBiMjEyMDJkNWUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.F4_0uFoKjGjmDiOg-4hPUL2jE7weVDpkHGrlcfL3MDg){:width="700px"}  
+
+개인화 추천 기능을 제공하기 위해, 카카오계정을 이용한 로그인 기능이 제공된다.  
+또, 우측 화면과 같이 각 영화별로 리뷰를 남길 수 있는 기능을 제공한다.  
+아래는 그 후의 메인 페이지 결과이다.  
+
+<br><br>
+
+![추천시스템](https://private-user-images.githubusercontent.com/63998352/414788420-b1a54ee5-30f8-4bb4-b380-39904c64175f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODEzOTIsIm5iZiI6MTczOTk4MTA5MiwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjAtYjFhNTRlZTUtMzBmOC00YmI0LWIzODAtMzk5MDRjNjQxNzVmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDQ1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTU1MTk4NzE5NWM3NDAzZjc4YzQ3ODFiY2ZhNmVlZjZiMDlhMDc1ZDkzYWVlNmQzMDU2YzYyNDVkYWQxMjY1OWUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.aHejg_8FSoST2NKcs_vQCWGFxZkAV0Cy0l4sz8bBr_M){:width="700px"}  
+
+왼쪽 화면의 경우 아무런 추천이 적용되지 않은 상태로, 인기 순위와 유사하게 컨텐츠들이 추천되고 있다.  
+우측 화면의 경우 범죄도시 1, 2, 3에 대한 평점 5점을 제출한 후의 결과로, 범죄도시의 주연 배우인 마동석 배우가 출연하는 영화들이 추천되고 있는 모습을 볼 수 있다.  
+
+추천 시스템의 경우, 기본적으로 콘텐츠 기반 필터링과 협업 필터링을 결합한 하이브리드 추천 시스템을 사용하였다.  
+- **콘텐츠 기반 필터링**: 콘텐츠의 메타데이터(제목, 줄거리, 감독, 배우진 등)를 이용하여 유사한 작품을 추천하는 방식  
+- **협업 필터링**: 나와 유사한 취향을 가진 사람들이 좋은 평점을 남긴 작품을 추천하는 방식  
+
+추천 시스템은 위 2가지 방식을 결합하여 유저의 시청 기록 및 남긴 평점을 기반으로 유저 개개인마다의 추천 목록을 제공하는 방식으로 구현하였다.  
+
+<br><br>
+
+## OTT 서비스와의 연동
+![연동](https://private-user-images.githubusercontent.com/63998352/414788432-23e01e61-fe97-49c5-9c62-bc381895b6b4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODEzOTIsIm5iZiI6MTczOTk4MTA5MiwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MzItMjNlMDFlNjEtZmU5Ny00OWM1LTljNjItYmMzODE4OTViNmI0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDQ1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTk3ZmI5MWFmYjk2N2YzYTRhOTY2MjJhNDFiMjA3ODU0MDdmYjRhNzY4MDIwMTU5MjFlMjQ0ZjIyNjQyZDlkZDkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.ABLYtY3N3xabmqpmIxcn_xYwJs3131yWrtMvW_ADFw0){:width="300px"}  
+
+각 컨텐츠의 디테일 페이지에서 시청 가능한 OTT의 리스트들을 확인할 수 있다.  
+클릭 시에는 바로 해당 OTT 어플리케이션으로 넘어가게 된다.  
+
 
 ## 향후 개선 방안 및 보완 사항
 
