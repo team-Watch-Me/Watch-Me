@@ -226,10 +226,10 @@ OTT를 토글링하는 방식으로 OTT들에 대한 필터링을 진행하였�
 [회의록 및 멘토링 정리본](https://quill-bulb-27c.notion.site/38c60ef591524f6fa592374f2ba8ac09)
 
 ## 발표자료
-- 제안발표: [Watch-Me_제안_발표.pptx](파일:Watch-Me_제안_발표.pptx)  
-- 중간발표: [Watch-Me_중간_발표.pptx](파일:Watch-Me_중간_발표.pptx)  
-- 최종발표: [Watch-Me_최종_발표.pptx](파일:Watch-Me_최종_발표.pptx) / [Watch-Me 최종 발표(구글 슬라이드)](https://docs.google.com/presentation/d/1NhUGDlvh8zAaRte0kignFLydAL6fmD3GBPKEaSO7A60/edit?usp=sharing)
+- 제안발표: [Watch-Me_제안_발표.pptx](https://github.com/user-attachments/files/18871591/Watch-Me_._.pptx)  
+- 중간발표: [Watch-Me_중간_발표.pptx](https://github.com/user-attachments/files/18871593/Watch-Me_._.pptx)  
+- 최종발표: [Watch-Me_최종_발표.pptx](https://github.com/user-attachments/files/18871590/Watch-Me_._.pptx) / [Watch-Me 최종 발표(구글 슬라이드)](https://docs.google.com/presentation/d/1NhUGDlvh8zAaRte0kignFLydAL6fmD3GBPKEaSO7A60/edit?usp=sharing)
 
 ## 최종 보고서
-- [Watch_Me_최종보고서.docx](파일:Watch_Me_최종보고서.docx)  
-- [Watch_Me_최종보고서.pdf](파일:Watch_Me_최종보고서.pdf)
+- [Watch_Me_최종보고서.docx](https://github.com/user-attachments/files/18871592/Watch_Me_.docx)  
+- [Watch_Me_최종보고서.pdf](https://github.com/user-attachments/files/18871594/Watch_Me_.-3.pdf)
