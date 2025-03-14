@@ -1,5 +1,7 @@
 # **프로젝트 개요**
 
+![Watch_Me_시연영상](https://github.com/user-attachments/assets/fca3c408-bf75-42ff-9344-08c5e292894f)
+
 ## 프로젝트명
 **Watch Me**
 
@@ -14,7 +16,7 @@
 
 ## 프로토타입 및 결과물 미리보기
 (좌) 프로토타입 / (우) 결과물 메인페이지  
-![프로토타입](https://private-user-images.githubusercontent.com/63998352/414788426-b3a9e4a1-a672-4c21-868e-bf0de11420bb.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODA1ODQsIm5iZiI6MTczOTk4MDI4NCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjYtYjNhOWU0YTEtYTY3Mi00YzIxLTg2OGUtYmYwZGUxMTQyMGJiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTEyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTZmZTE4ZGViZDUxNGZiM2NhN2UxNDc3MmYyNTVhYzdkNDY1YmJmYzhjZDU4NTViZWI1YzE4M2VjZGE0MmI3ZWQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.niqrM9aEBK5MdP3_9tJc5d_-wswsenwIQEoTYMXlxC4)
+<img width="623" alt="프로토타입" src="https://github.com/user-attachments/assets/eb46c6cf-07e1-4d68-9eab-17893ee0703f" />
 
 <br>
 
@@ -48,10 +50,11 @@
 <br>
 
 - **Github를 통한 프로젝트 버전 관리**  
-  ![깃허브화면](https://private-user-images.githubusercontent.com/63998352/414788428-91dd56c5-d285-4ef5-a898-1dadd4b40912.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODA1ODQsIm5iZiI6MTczOTk4MDI4NCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjgtOTFkZDU2YzUtZDI4NS00ZWY1LWE4OTgtMWRhZGQ0YjQwOTEyLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTEyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWM0ZGVhMDA0MDFjMzU5YzgzYmQxZGM2NDU1MzcxZmZiOTdjMzlmNjFiMGVjMjVlOTlkNzg1NTFiYjM1Y2YxYTEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Dd4385GQgNajaZtJNZc6XV8nXJDG-xoCsDgr2g-9MXw)
+  <img width="886" alt="깃허브화면" src="https://github.com/user-attachments/assets/4f2ddaf1-6746-4319-b7ff-ee815608138a" />
+
 
 - **Notion을 통한 작업 현황 및 일정 관리**  
-  ![노션화면](https://private-user-images.githubusercontent.com/63998352/414788419-773421e8-88e4-47f4-8122-278a4bde5c97.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODA1ODQsIm5iZiI6MTczOTk4MDI4NCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MTktNzczNDIxZTgtODhlNC00N2Y0LTgxMjItMjc4YTRiZGU1Yzk3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTEyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTg1Mzk3MTE5NDkyY2Y3NTRkMGFjMDkxN2NiMzA0MDkxOWMyNzY0Yjg1NGYzN2I1ZTlhYmU5ZjFiZjA4OTM2YmEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.3oJEvvvjwSWtNusnr8v8-L6BHu5XkSc8OwgCilOutSI)
+  <img width="980" alt="노션화면" src="https://github.com/user-attachments/assets/7f199b1b-20fe-428a-afc4-17365ff187c8" />
 
 <br>
 
@@ -77,10 +80,12 @@
 # **프로젝트 구조**
 
 ## 프로젝트 전체 구조
-![프로젝트구조](https://private-user-images.githubusercontent.com/63998352/414788427-cbb470c8-2c7c-4d3e-acf1-c2d79f3e22e0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODA1ODQsIm5iZiI6MTczOTk4MDI4NCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjctY2JiNDcwYzgtMmM3Yy00ZDNlLWFjZjEtYzJkNzlmM2UyMmUwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTEyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWM2M2U4Nzg1ZmMzNmM5YTU2NDFhMjg4N2RmYmQ2ZDBiNTZiNjA2NDJiNjBiNGJiZjg3N2E1M2RiMDdmNzI2NWYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.G4pfO0JkpkX4Wq54XbetcxOZ9hC-5oUnuzxUmEw-wV0)
+<img width="452" alt="프로젝트구조" src="https://github.com/user-attachments/assets/f88d280f-902a-4cb4-87d6-dc8fdf97ee49" />
+
 
 ## 추천 시스템 구조
-![추천시스템구조](https://private-user-images.githubusercontent.com/63998352/414788434-18f2afec-0c4c-46eb-a971-95d020893d8d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODA1ODQsIm5iZiI6MTczOTk4MDI4NCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MzQtMThmMmFmZWMtMGM0Yy00NmViLWE5NzEtOTVkMDIwODkzZDhkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTEyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTNjOWVkOWEwZjZmMWEwNWZlOGFjZjYzODEyNDA2NzA2ODQ0YTMzM2Y1OTM2MGFhN2JjZWI1Y2JlMTBiNWIzNmImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.2GEjf2DhhRxS6VGWPVhBIjZeDLBWeZwZ1v-r78WYggA)
+<img width="719" alt="추천시스템구조" src="https://github.com/user-attachments/assets/d602bea0-a32c-4a2f-9e9a-cbb640779052" />
+
 
 <br>
 
@@ -94,39 +99,45 @@ Watch me 앱의 목표는 OTT 플랫폼을 통합하고, 이에 따른 개인화
 
 아래는 개발 계획 단계에서의 백엔드와 프론트엔드의 전체적인 구상도이다.
 
-![앱 구조도](https://private-user-images.githubusercontent.com/63998352/414791119-7ded6071-e0b7-4c62-bd23-643fbd1ddfbc.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODA1ODQsIm5iZiI6MTczOTk4MDI4NCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3OTExMTktN2RlZDYwNzEtZTBiNy00YzYyLWJkMjMtNjQzZmJkMWRkZmJjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTEyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM4M2ZkMjY4ODVmODcwNjBkNjZlYzIxNjM5ZTc3YTIzMTc4MmE4NGU3YzJhYjA4MTVmOTZmN2NlMjI4OTYxOGUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.W2cpncwz6DQur42E62ybr8qFfZNUB3n4LOAkKJg829k)
+![앱_구조도2](https://github.com/user-attachments/assets/b371fa4e-3181-486b-b311-56bd17a06458)
 
-![프로젝트구조](https://private-user-images.githubusercontent.com/63998352/414788427-cbb470c8-2c7c-4d3e-acf1-c2d79f3e22e0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODA1ODQsIm5iZiI6MTczOTk4MDI4NCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjctY2JiNDcwYzgtMmM3Yy00ZDNlLWFjZjEtYzJkNzlmM2UyMmUwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTEyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWM2M2U4Nzg1ZmMzNmM5YTU2NDFhMjg4N2RmYmQ2ZDBiNTZiNjA2NDJiNjBiNGJiZjg3N2E1M2RiMDdmNzI2NWYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.G4pfO0JkpkX4Wq54XbetcxOZ9hC-5oUnuzxUmEw-wV0)
+<img width="452" alt="프로젝트구조" src="https://github.com/user-attachments/assets/538c4ff3-203b-4819-bd53-87462f10dcb5" />
+
 
 ## 설계 주요 고려사항 및 개발항목
 
 Watch me 앱의 주요 기능은 크게 2가지로 나눌 수 있다. OTT 플랫폼들의 통합과 함께 통합된 콘텐츠 데이터를 이용한 개인 맞춤 추천이 주요한 기능이다. 이러한 기능들을 구현하기 위해서는 우선적으로 영화와 OTT 플랫폼들에 대한 정보를 수집해야 했다. 개발 전에 각 OTT 플랫폼들은 관련된 API를 따로 제공하지 않는 것으로  확인했었기 때문에, 전체적인 데이터를 수집할 수 있는 방법을 고민하게 되었다. 우리가 필요한 주요한 정보는 다음과 같은 것들이 있었다. OTT 플랫폼들을 통합하기 위해서 우선적으로 어떠한 영화에 대해서, 그 영화를 시청할 수 있는 OTT들을 찾아야 했다. 또한 영화를 모바일 애플리케이션 화면에 표시하기 위해서는, 그 영화에 대한 여러 정보가 필요하다. 예를 들면, 영화의 제목, 포스터 이미지, 감독과 배우등이 필요하였다. 처음에 개발에 들어가기에 앞서서는 데이터 스크래핑을 통하여 정보를 얻은 후 DB에 순차적으로 저장하고, 백엔드 서버에서 특정 주기마다 데이터 스크래핑을 통해 데이터를 갱신하는 방식을 취하려 했었다. 개발을 이어나가게 되면서 tmdb와 키노라이츠등의 api를 활용하여 데이터를 수집하는 방식으로 전환하였다. 아래는 API 호출하여 데이터를 확보하는 실제 화면이다.
 
-![줄거리 토큰1](https://private-user-images.githubusercontent.com/63998352/414791653-129c38a7-315e-4a40-8f51-8b21d61dad17.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODA1ODQsIm5iZiI6MTczOTk4MDI4NCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3OTE2NTMtMTI5YzM4YTctMzE1ZS00YTQwLThmNTEtOGIyMWQ2MWRhZDE3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTEyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWQ0ZTEyZTBjOTllMTg2Nzg3MGE4NDI5ZTNlOTVkYWRmNGJhNWFjY2UwMTFhYTA4NzY1OTczMmM2MmQyNDhhMTAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.0pAL_Ls3SuVZa35YdjlXDLoIXJdF2WBOlKGNBSlsFwk)
+![줄거리_토큰1](https://github.com/user-attachments/assets/e3331c71-6f09-4bf4-b1c0-41ae327a8b1f)
+
 
 이렇게 얻게 된 영화에 관련된 데이터는 크게 두가지 부분에서 사용된다. 우선 백엔드에서 db에 관련된 데이터를 json 형식으로 저장하고 있다. 프로트엔드에서는 영화의 포스터 이미지와 함께 실제로 화면에 표시해야 한다. 이를 위하여 fastapi를 사용하여 http api로 백엔드와 소통하여 정보를 주고받고, 실제 화면에 표시한다. 추천 시스템에서도 이러한 데이터들을 활용한다. 각 영화의 줄거리를 자연어 처리를 통해 정제한 후, 유사도를 파악함으로써 하이브리드 된 추천 시스템에서 콘텐츠 기반 추천 부분의 기반이 된다. 또한 이러한 자연어 처리를 통해 유사도를 분석함으로써, 각 영화와 비슷한 영화에 대한 학습이 진행될 수 있었다.  tmdb api에서는 각 영화를 별점을 매긴 사람 수와 함께 평균 별점이 제공된다. 우리 앱에서는 개인별 추천 시스템과 동시에 일반적인 추천도 적용하는데 이에 활용되었다.  아래는 관련 화면이다.
 
-![줄거리 토큰2](https://private-user-images.githubusercontent.com/63998352/414788425-671be1f7-b314-4172-a83d-4e679524b62d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODEwNjMsIm5iZiI6MTczOTk4MDc2MywicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjUtNjcxYmUxZjctYjMxNC00MTcyLWE4M2QtNGU2Nzk1MjRiNjJkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTkyM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWMyZTg5NzY0ODA2ODQzOTYxM2EwODYzYWYxMzFhMzNiZjA4ZmY4YjRmOTE2ODljOTU1ZTc2N2QzOTZiYWQ4ZmUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.4Hx2cD5C6Qd7utIPbBEBgF_okdD9Eex-SP4zs8vBABI)
+<img width="451" alt="줄거리_토큰2" src="https://github.com/user-attachments/assets/c4b46fee-4ddd-47ba-a5fc-016c8d0067ff" />
+
 
 이러한 줄거리에 대한 것들은 검색 시스템에도 포함되어 키워드를 포함한 검색 또한 가능하게 하였다. 아래는 배우와 장르를 검색시스템에 활용하여 올바른 결과가 검색된 화면이다.
 
-![키워드검색](https://private-user-images.githubusercontent.com/63998352/414788424-2385c7e8-dbf3-4583-93ee-0863eac473ff.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODEwNjMsIm5iZiI6MTczOTk4MDc2MywicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjQtMjM4NWM3ZTgtZGJmMy00NTgzLTkzZWUtMDg2M2VhYzQ3M2ZmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE1NTkyM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTJmMDJkNjVhNGFmNGU1YmEwZGZiZDBjNjFhMjFhMDhkZjg2NTMxZGVlMWNjZjc4ZmI5N2MzY2I4ODU4MzZkNGYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.MwIiWgJjmjdAAL0LXCUeLLA14L8Ws8gMYNqn9t5WjXw)
+<img width="728" alt="키워드검색" src="https://github.com/user-attachments/assets/f17d552f-0f4d-4f14-8bca-632acb19a458" />
+
 
 OTT를 토글링하는 방식으로 OTT들에 대한 필터링을 진행하였다. 이에 총 6가지 플랫폼들에 대해서 원하는 플랫폼만에 대한 추천과 메인화면이 구성되게 된다. 이러한 각 OTT들에 대한 선택 정보는 프론트엔드와 백엔드간의 정보를 주고받으면서, 사용자의 토글링 상태를 프론트엔드가 백엔드에 관련 요청을 보냄으로써 백엔드에서는 각 OTT들에 대한 선택 상태를 고려해 메인 화면에 구성될 영화들을 넘기게 된다.  
 
 이러한 각 OTT들에 대한 선택 상태를 메인 화면에서 관리하고자 결정했다. 앱은 프론트엔드 상에서 크게 5가지 화면으로 구성된다. 로그인 페이지, 메인 페이지, 상세 페이지, 마이 페이지, 검색 페이지로 구성된다. 첫 설계에서는 추천 페이지도 포함되었으나, 후에 메인 화면에 추천 영화를 함께 포함하는 방식으로 화면 구현을 변경했다. 나머지 전체적인 화면 전환의 구성 흐름은 설계했던 것과 동일하게 적용하였다. 상세 페이지에서는 그 영화를 시청할 수 있는 OTT 플랫폼들을 나열하여 보여주었고, 각 OTT를 누르면 내 모바일 환경에서 그 OTT 플랫폼의 링크로 직접 이동되도록 구현하였다.
 
-![보러가기](https://private-user-images.githubusercontent.com/63998352/414800375-9e260d77-8cca-4721-91b9-a8e4e3a99aa7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODExNDMsIm5iZiI6MTczOTk4MDg0MywicGF0aCI6Ii82Mzk5ODM1Mi80MTQ4MDAzNzUtOWUyNjBkNzctOGNjYS00NzIxLTkxYjktYThlNGUzYTk5YWE3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDA0M1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTE0OGFhMTAyZDI3ZDQwODM4NzJhZTgzOTgyNWFjZWQ0MGVkMmRlMWYzYjkzYzEwNzgzNGM1NmQwZDAyYzQ4OTYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.rdhk1RBJL4jeEBsDsxTtB3fEh3a0WSvux8Rs58AHH6A)
+![보러가기-2](https://github.com/user-attachments/assets/06b6fca0-cfea-4e8c-aa83-284fe969bb62)
+
 
 상세 페이지에서는 평가 버튼을 누르면 영화에 대한 별점과 코멘트를 남길 수 있는데, 이는 백엔드 서버에 연결되어 추천 시스템과 적용된다. 각 유저가 어떠한 영화에 대해 남긴 별점을 분석하여 개인화된 추천 시스템이 업데이트 된다.
 
-![평가남기기](https://private-user-images.githubusercontent.com/63998352/414800405-3b66e391-110d-4d11-bcd7-d81e8ae25797.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODExNDMsIm5iZiI6MTczOTk4MDg0MywicGF0aCI6Ii82Mzk5ODM1Mi80MTQ4MDA0MDUtM2I2NmUzOTEtMTEwZC00ZDExLWJjZDctZDgxZThhZTI1Nzk3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDA0M1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWQ0NTg1OWRmOGQ4NDQ2ZTAzYzRlYmRhYjFhZTlmMjAwYmY2NDIxMWZjM2U0ODY3YzNmYTg4MzBiM2QzNmNiNzYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.oqQdEc49m0ey8AHus2ZEOW1QsLQBBinPBCjFS9NZFdU)
+![평가남기기-2](https://github.com/user-attachments/assets/0d53e663-45b6-4f5e-a170-90687224d322)
 
 아래는 특정 유저의 별점과 평가에 따라서 각 유저의 추천되는 콘텐츠들이 실제로 어떻게 달라졌는지를 보여주는 화면이다. 위 화면은, 배우 박보영의 로맨스/드라마 영화에 대해서 높은 별점을 준 유저의 추천 영화 항목이고 아래는 배우 마동석의 액션 영화에 대해 높은 별점을 준 유저의 추천 영화 항목이다.
 
-![박보영추천](https://private-user-images.githubusercontent.com/63998352/414800696-ffa930f7-3065-4f6f-81be-c20d92e0e10a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODExODgsIm5iZiI6MTczOTk4MDg4OCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ4MDA2OTYtZmZhOTMwZjctMzA2NS00ZjZmLTgxYmUtYzIwZDkyZTBlMTBhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDEyOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZlZjY0MTFiNTAwMTc4ZDhiNzllNDVmNzdlODZiY2Q0MTU4ODA0NjQ4MDFlYTMyNjAwODQ1MTk4ZmFlNzE0ZjQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.g-NxPMk3yTjXoQ_vsSjiSQbWoa06J9eSd_P8kGK4V7A)
+<img width="334" alt="박보영추천-2" src="https://github.com/user-attachments/assets/3db4bc5b-12ad-4a97-aba5-63f6424f3b57" />
 
-![마동석추천](https://private-user-images.githubusercontent.com/63998352/414800710-e252e051-f109-4ade-bbf6-b59dd25e51a2.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODExODgsIm5iZiI6MTczOTk4MDg4OCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ4MDA3MTAtZTI1MmUwNTEtZjEwOS00YWRlLWJiZjYtYjU5ZGQyNWU1MWEyLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDEyOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTcxOWUzZjdkMGY3ZGRkMmJhZjQxODNjMzQxOGNlOTUzYTZkZWRlMzk0ZWRjMDg3MTQ3OWRiYmM5NDU3NzM4MTcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.EW1X4oVF-J-IeV7Xyiax5VkqQPGF6kr_9qcpYEy0A5M)
+<img width="343" alt="마동석추천-2" src="https://github.com/user-attachments/assets/9c20b31e-4ecc-471d-ada0-f491ec6f5e2d" />
+
 
 이러한 내용들을 통합하여 watch-me 앱을 설계 및 구현 완료하였다.
 
@@ -143,13 +154,16 @@ OTT를 토글링하는 방식으로 OTT들에 대한 필터링을 진행하였�
 <br>
 
 ## 최종 결과
-![결과물](https://private-user-images.githubusercontent.com/63998352/414788429-81f8786c-84ee-4633-ae18-d0c1b19183ca.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODExODgsIm5iZiI6MTczOTk4MDg4OCwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjktODFmODc4NmMtODRlZS00NjMzLWFlMTgtZDBjMWIxOTE4M2NhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDEyOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTYzMjdhNmI4YTRkNWE1ZTI4MDA0NTEwMzZkODZmZGRlOWFhZTFjODU0MzEwM2IzNGY5ZTQ2MDgxYTQyMGVkMmImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.qrp0G5cs-apSVoWUudWkx_DWgjZ6FHCAG3yN4QqmXVc)
+
+<img width="950" alt="결과물" src="https://github.com/user-attachments/assets/4ded8320-fb82-48f4-87d1-d124bea14013" />
 
 
 <br><br>
 
 ## 메인 페이지 OTT 필터링
-![메인필터링](https://private-user-images.githubusercontent.com/63998352/414788435-e95e4f7b-f298-4481-8d71-d85a7559fd69.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODEzOTIsIm5iZiI6MTczOTk4MTA5MiwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MzUtZTk1ZTRmN2ItZjI5OC00NDgxLThkNzEtZDg1YTc1NTlmZDY5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDQ1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWFmNGFhN2I3NTA5ZTQxOTFhZGE2YTEyYjk5MWI2YWEyM2ZlNDhhZTNmMmUzMDc2NWI4M2NlM2RkNzdhMGRiM2YmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.T3qwnm9VZ6bCrphghffZ4A7_fnVlduHa6tIZ13RF_q8){:width="700px"}  
+
+<img width="730" alt="메인필터링" src="https://github.com/user-attachments/assets/d040d3fb-a945-4f4f-b189-8142a857a4dd" />
+
 
 **(좌) Netflix On, (우) Netflix Off**  
 서울의 봄, 오펜하이머의 경우 Netflix에만 있는 작품이다.  
@@ -158,7 +172,8 @@ OTT를 토글링하는 방식으로 OTT들에 대한 필터링을 진행하였�
 <br><br>
 
 ## 검색 페이지 OTT 필터링
-![검색필터링](https://private-user-images.githubusercontent.com/63998352/414788438-8ae3cc0e-602a-4d77-9f07-f25aeaf541fe.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODEzOTIsIm5iZiI6MTczOTk4MTA5MiwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MzgtOGFlM2NjMGUtNjAyYS00ZDc3LTlmMDctZjI1YWVhZjU0MWZlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDQ1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY1MjdlYmE2YmVjYmYyYWQ0ZDQyNWM0NmU4YzEwMjg3YjFhZTRlNzYyM2VjOTc1NTAxODNjYjRhYzUzODE3ZTkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.D83vj3dxkotdDoncy1olTJOIX0M_GW0Cg90mH_z7o9U){:width="700px"}  
+<img width="730" alt="검색필터링" src="https://github.com/user-attachments/assets/f0f63000-14fa-4db2-82c5-8b3efd30c407" />
+
 
 **(좌) ALL On, (우) 티빙 & 디즈니+ Off**  
 마동석 배우 검색 결과이다.  
@@ -167,7 +182,8 @@ OTT를 토글링하는 방식으로 OTT들에 대한 필터링을 진행하였�
 <br><br>
 
 ## 키워드 검색 기능
-![키워드검색](https://private-user-images.githubusercontent.com/63998352/414788421-983675a0-70b2-4555-b437-92a3f818303c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODEzOTIsIm5iZiI6MTczOTk4MTA5MiwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjEtOTgzNjc1YTAtNzBiMi00NTU1LWI0MzctOTJhM2Y4MTgzMDNjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDQ1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWNiMjJjZDU1MzhmZjgxNzM4OTUzNmYyZWE3YmE4ZDUzMTcwYzQzNTNmNWUyNDRkMWQyYzVjYjYxY2Q1NTMwNTcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Nh5QPr22WonGF9oZnxfRkZezr91jIJ38ZwHAi78pjiA){:width="700px"}  
+
+<img width="728" alt="키워드검색" src="https://github.com/user-attachments/assets/42fc0770-5d4c-497c-826e-7dd0382cb489" />
 
 **(좌) '황정민 모험' 검색 결과, (우) '이하늬 코미디' 검색 결과**  
 
@@ -178,15 +194,17 @@ OTT를 토글링하는 방식으로 OTT들에 대한 필터링을 진행하였�
 <br><br>
 
 ## 개인별 추천 시스템
-![카카오로그인](https://private-user-images.githubusercontent.com/63998352/414788422-163dcdbf-f310-4ea7-b843-bd09d114140e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODEzOTIsIm5iZiI6MTczOTk4MTA5MiwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjItMTYzZGNkYmYtZjMxMC00ZWE3LWI4NDMtYmQwOWQxMTQxNDBlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDQ1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTFmMjMxZGI2OTk1ZmZmYzRlOGNlMzkzNTBjMGI1NjdjNjg4ZTkyNzZhNzNkNTA0OGU5OGY1YjBiMjEyMDJkNWUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.F4_0uFoKjGjmDiOg-4hPUL2jE7weVDpkHGrlcfL3MDg){:width="700px"}  
+<img width="730" alt="카카오로그인" src="https://github.com/user-attachments/assets/cb7619ae-a7f1-4b54-a2d0-d92e40840205" />
+
 
 개인화 추천 기능을 제공하기 위해, 카카오계정을 이용한 로그인 기능이 제공된다.  
 또, 우측 화면과 같이 각 영화별로 리뷰를 남길 수 있는 기능을 제공한다.  
 아래는 그 후의 메인 페이지 결과이다.  
 
 <br><br>
+<img width="733" alt="추천시스템" src="https://github.com/user-attachments/assets/195b2c54-aefb-4d5e-b52a-543c2da94203" />
 
-![추천시스템](https://private-user-images.githubusercontent.com/63998352/414788420-b1a54ee5-30f8-4bb4-b380-39904c64175f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODEzOTIsIm5iZiI6MTczOTk4MTA5MiwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MjAtYjFhNTRlZTUtMzBmOC00YmI0LWIzODAtMzk5MDRjNjQxNzVmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDQ1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTU1MTk4NzE5NWM3NDAzZjc4YzQ3ODFiY2ZhNmVlZjZiMDlhMDc1ZDkzYWVlNmQzMDU2YzYyNDVkYWQxMjY1OWUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.aHejg_8FSoST2NKcs_vQCWGFxZkAV0Cy0l4sz8bBr_M){:width="700px"}  
+
 
 왼쪽 화면의 경우 아무런 추천이 적용되지 않은 상태로, 인기 순위와 유사하게 컨텐츠들이 추천되고 있다.  
 우측 화면의 경우 범죄도시 1, 2, 3에 대한 평점 5점을 제출한 후의 결과로, 범죄도시의 주연 배우인 마동석 배우가 출연하는 영화들이 추천되고 있는 모습을 볼 수 있다.  
@@ -200,7 +218,8 @@ OTT를 토글링하는 방식으로 OTT들에 대한 필터링을 진행하였�
 <br><br>
 
 ## OTT 서비스와의 연동
-![연동](https://private-user-images.githubusercontent.com/63998352/414788432-23e01e61-fe97-49c5-9c62-bc381895b6b4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5ODEzOTIsIm5iZiI6MTczOTk4MTA5MiwicGF0aCI6Ii82Mzk5ODM1Mi80MTQ3ODg0MzItMjNlMDFlNjEtZmU5Ny00OWM1LTljNjItYmMzODE4OTViNmI0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjE5VDE2MDQ1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTk3ZmI5MWFmYjk2N2YzYTRhOTY2MjJhNDFiMjA3ODU0MDdmYjRhNzY4MDIwMTU5MjFlMjQ0ZjIyNjQyZDlkZDkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.ABLYtY3N3xabmqpmIxcn_xYwJs3131yWrtMvW_ADFw0){:width="300px"}  
+<img width="292" alt="연동" src="https://github.com/user-attachments/assets/3bfdf2d7-7c19-4b12-be69-b07311c458c4" />
+
 
 각 컨텐츠의 디테일 페이지에서 시청 가능한 OTT의 리스트들을 확인할 수 있다.  
 클릭 시에는 바로 해당 OTT 어플리케이션으로 넘어가게 된다.  
