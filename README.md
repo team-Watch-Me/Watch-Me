@@ -14,7 +14,7 @@
 
 ## 프로토타입 및 결과물 미리보기
 (좌) 프로토타입 / (우) 결과물 메인페이지  
-![프로토타입](https://github.com/jinsoolve/Watch-Me/blob/main/README_IMG/프로토타입.png?raw=true)
+![프로토타입](README_IMG/프로토타입.png)
 
 <br>
 
