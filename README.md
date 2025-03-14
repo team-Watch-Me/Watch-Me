@@ -97,7 +97,7 @@ Watch me 앱의 목표는 OTT 플랫폼을 통합하고, 이에 따른 개인화
 
 아래는 개발 계획 단계에서의 백엔드와 프론트엔드의 전체적인 구상도이다.
 
-![앱_구조도](https://github.com/user-attachments/assets/122767a7-0317-4ddd-af8c-d594255442d2)
+![앱_구조도2](https://github.com/user-attachments/assets/b371fa4e-3181-486b-b311-56bd17a06458)
 
 <img width="452" alt="프로젝트구조" src="https://github.com/user-attachments/assets/538c4ff3-203b-4819-bd53-87462f10dcb5" />
 
