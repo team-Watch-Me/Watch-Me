@@ -14,7 +14,7 @@
 
 ## 프로토타입 및 결과물 미리보기
 (좌) 프로토타입 / (우) 결과물 메인페이지  
-![프로토타입](./README_IMG/프로토타입.png)
+<img width="623" alt="프로토타입" src="https://github.com/user-attachments/assets/eb46c6cf-07e1-4d68-9eab-17893ee0703f" />
 
 <br>
 
