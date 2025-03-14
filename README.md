@@ -1,4 +1,5 @@
 # **프로젝트 개요**
+![Watch_Me_시연영상](https://github.com/user-attachments/assets/228820a0-b862-459f-995b-d8de95309bb4)
 
 ## 프로젝트명
 **Watch Me**
