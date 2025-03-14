@@ -1,5 +1,8 @@
 # **프로젝트 개요**
-![Watch_Me_시연영상](https://github.com/user-attachments/assets/228820a0-b862-459f-995b-d8de95309bb4)
+<img src="https://github.com/user-attachments/assets/d8d36634-1d8b-4f09-9112-c9a15c0fb384" width="800">
+
+![Watch_Me_시연영상](https://github.com/user-attachments/assets/d8d36634-1d8b-4f09-9112-c9a15c0fb384)
+
 
 ## 프로젝트명
 **Watch Me**
